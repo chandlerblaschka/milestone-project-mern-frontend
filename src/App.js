@@ -1,10 +1,10 @@
 import './App.css';
-import PostsGallery from './components/PostsGallery';
+import Gallery from './components/Gallery';
 
 function App() {
   return (
     <div className="App">
-      <PostsGallery />
+      <Gallery />
     </div>
   );
 }
