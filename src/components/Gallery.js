@@ -10,7 +10,8 @@ const Gallery = (props) => {
         display: "flex",
         flexDirection: "row",
         justifyContent: "center",
-        flexWrap: "wrap"
+        flexWrap: "wrap",
+
     }
 
     if (cards) {

@@ -37,3 +37,7 @@
     transform: rotate(360deg);
   }
 }
+
+.cardStyleHover:hover {
+  box-shadow: 0px 0px 10px 1px grey;
+}
