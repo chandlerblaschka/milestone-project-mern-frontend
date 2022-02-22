@@ -1,6 +1,7 @@
 import React from "react";
-import Card from "react-bootstrap/Card"
+import Card from "react-bootstrap/Card";
 import CardGroup from "react-bootstrap/CardGroup";
+import { Link } from "react-router-dom";
 
 const GalleryItem = (props) => {
     const card = props.data
@@ -16,6 +17,7 @@ const GalleryItem = (props) => {
 
     return (
         <div style={divStyle}>
+            <Link to={`/postShow/${props.index}`}>
             <CardGroup>
                 <Card style={cardStyle}>
                     <Card.Img variant="top" src='' />
@@ -29,6 +31,7 @@ const GalleryItem = (props) => {
                     </Card.Footer>
                 </Card>
             </CardGroup>
+            </Link>
         </div>
     )
 }

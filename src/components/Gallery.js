@@ -1,5 +1,5 @@
-import React from "react"
-import GalleryItem from "./GalleryItem.js"
+import React from "react";
+import GalleryItem from "./GalleryItem.js";
 
 const Gallery = (props) => {
     let cards = Array.from(props.data);
@@ -15,7 +15,7 @@ const Gallery = (props) => {
 
     if (cards) {
         cardsList = cards.map((card, index) => {
-            return <GalleryItem data={card} key={index} />;
+            return <GalleryItem data={card} key={index} index={index}/>;
         })
     }
 
