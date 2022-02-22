@@ -1,9 +1,10 @@
+import { useEffect, useState } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
 import BlogNavBar from './components/BlogNavBar';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Gallery from './components/Gallery';
 import NewPost from './components/NewPost';
-import { useEffect, useState } from 'react';
+import ShowPost from './components/ShowPost';
 
 function App() {
 
@@ -36,9 +37,11 @@ function App() {
 
           } /> */}
           {/* POST SHOW PAGE */}
-          {/* <Route path="/postShow/:postId" element={
-
-          } /> */}
+          <Route path="/postShow/:postId" element={
+            <ShowPost 
+              data = {data}
+            />
+          } />
         </Routes>
       </Router>
     </div>
