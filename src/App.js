@@ -19,6 +19,17 @@ function App() {
     fetchData()
   }, [])
 
+  const deletePost = async (postId) => {
+    await fetch(`http://localhost:3000/posts/${postId}`, {
+      method: "DELETE",
+      mode: 'cors',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    window.location = "/"
+  }
+
   return (
     <div className="App">
       <Router>
@@ -37,9 +48,7 @@ function App() {
           } /> */}
           {/* POST SHOW PAGE */}
           <Route path="/postShow/:postId" element={
-            <ShowPost 
-              data = {data}
-            />
+            <ShowPost data={data} deletePost={deletePost} />
           } />
         </Routes>
       </Router>
