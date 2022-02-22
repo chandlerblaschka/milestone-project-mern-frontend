@@ -7,20 +7,25 @@ const GalleryItem = (props) => {
 
     const cardStyle = {
         width: "250px",
-        height: "200px"
+        // height: "200px",
+    }
+
+    const divStyle = {
+        padding: "10px"
     }
 
     return (
-        <div>
+        <div style={divStyle}>
             <CardGroup>
                 <Card style={cardStyle}>
                     <Card.Img variant="top" src='' />
                     <Card.Body>
                         <Card.Title>{card.post_title}</Card.Title>
+                        <Card.Subtitle>{card.post_author}</Card.Subtitle>
                         <Card.Text>{card.post_content}</Card.Text>
                     </Card.Body>
                     <Card.Footer>
-                        <small className="text-muted">{card.date}</small>
+                        <small className="text-muted">{card.post_date}</small>
                     </Card.Footer>
                 </Card>
             </CardGroup>
