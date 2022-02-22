@@ -55,7 +55,7 @@ const NewPost = () => {
         const post = {
             post_author: author,
             post_title: title,
-            post_date: date,
+            post_date: date + "T06:00:00.000+00:00",
             post_content: content
         }
 
