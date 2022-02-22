@@ -5,7 +5,9 @@ const BlogNavBar = () => {
     return (
         <Navbar bg="dark" variant="dark">
             <Container>
-                <Navbar.Brand href="#home">Blog.it</Navbar.Brand>
+                <Link to="/" className="nav-link">
+                    <Navbar.Brand>Blog.it</Navbar.Brand>
+                </Link>
                 <Nav className="me-auto">
                     <Link to="/" className="nav-link">Posts</Link>
                     <Link to="/newPost" className="nav-link">Create Post</Link>
