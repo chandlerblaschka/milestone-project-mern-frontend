@@ -15,7 +15,7 @@ const GalleryItem = (props) => {
     }
 
     const divStyle = {
-        padding: "10px"
+        padding: "20px"
     }
 
     const dateFormatting = dateFormat(`${card.post_date}`, "mmmm dS, yyyy")
