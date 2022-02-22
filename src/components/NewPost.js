@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Form from "react-bootstrap/Form"
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Button from "react-bootstrap/Button";
+import dateFormat from "dateformat"
 
 const NewPost = () => {
 
@@ -47,15 +48,17 @@ const NewPost = () => {
 
     let [author, setAuthor] = useState("")
     let [title, setTitle] = useState("")
-    let [date, setDate] = useState("")
+    let [date, setDate] = useState(Date.now())
     let [content, setContent] = useState("")
+
+    const dateFormatted = dateFormat(date, "yyyy-mm-dd")
 
     const submitPost = async (e) => {
         e.preventDefault()
         const post = {
             post_author: author,
             post_title: title,
-            post_date: date + "T06:00:00.000+00:00",
+            post_date: date,
             post_content: content
         }
 
@@ -86,7 +89,7 @@ const NewPost = () => {
                         >
                             <Form.Control type="text" placeholder="John Doe" onChange={(e) => setAuthor(e.target.value)} />
                         </FloatingLabel>
-                        <Form.Control className="mb-3" size="md" type="date" style={formSpacingRight} onChange={(e) => setDate(e.target.value)} />
+                        <Form.Control className="mb-3" size="md" type="date" style={formSpacingRight} defaultValue={dateFormatted} disabled />
                     </div>
                     <FloatingLabel
                         controlId="floatingInput"

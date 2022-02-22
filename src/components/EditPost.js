@@ -2,11 +2,11 @@ import { useState } from "react"
 import { useParams } from "react-router-dom"
 import { useEffect } from "react"
 import { FloatingLabel, Form, Button } from "react-bootstrap"
+import dateFormat from "dateformat"
 
 const EditPost = () => {
 
     const { postId } = useParams()
-    let [data, setData] = useState({})
 
     // Post values
     let [author, setAuthor] = useState("")
@@ -47,24 +47,44 @@ const EditPost = () => {
         textAlign: "center"
     }
 
+    const dateFormatted = dateFormat(date, "yyyy-mm-dd")
+
     useEffect(() => {
         const fetchData = async () => {
             const response = await fetch(`http://localhost:3000/posts/${postId}`)
             const resData = await response.json()
-            setData(resData)
 
             // Set post values
             setAuthor(resData.post_author)
             setTitle(resData.post_title)
-            setDate(resData.post_date)
+            setDate(Date.now())
             setContent(resData.post_content)
         }
         fetchData()
     }, [])
 
+    const submitUpdate = async (e) => {
+        e.preventDefault()
+        const post = {
+            post_author: author,
+            post_title: title,
+            post_date: date,
+            post_content: content
+        }
+
+        await fetch(`http://localhost:3000/posts/${postId}`, {
+            method: "PUT",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(post)
+        })
+        window.location = "/"
+    }
+
     return (
         <div>
-            <Form style={formStyle}>
+            <Form style={formStyle} onSubmit={(e) => submitUpdate(e)}>
                 <Form.Group style={{ display: "flex", flexDirection: "column" }}>
                     <div style={nameDateStyle}>
                         <FloatingLabel
@@ -73,23 +93,23 @@ const EditPost = () => {
                             className="mb-3"
                             style={formSpacingLeft}
                         >
-                            <Form.Control type="text" placeholder="John Doe" onChange={(e) => setAuthor(e.target.value)} />
+                            <Form.Control type="text" placeholder="John Doe" onChange={(e) => setAuthor(e.target.value)} defaultValue={author} />
                         </FloatingLabel>
-                        <Form.Control className="mb-3" size="md" type="date" style={formSpacingRight} onChange={(e) => setDate(e.target.value)} />
+                        <Form.Control className="mb-3" size="md" type="date" style={formSpacingRight} onChange={(e) => setDate(e.target.value)} defaultValue={dateFormatted} disabled />
                     </div>
                     <FloatingLabel
                         controlId="floatingInput"
                         label="Blog Title"
                         className="mb-3"
                     >
-                        <Form.Control type="text" placeholder="My Blog Post" onChange={(e) => setTitle(e.target.value)} />
+                        <Form.Control type="text" placeholder="My Blog Post" onChange={(e) => setTitle(e.target.value)} defaultValue={title} />
                     </FloatingLabel>
                     <FloatingLabel
                         controlId="floatingInput"
                         label="Blog Content"
                         className="mb-3"
                     >
-                        <Form.Control as="textarea" placeholder="Create a blog here!" style={textAreaStyle} onChange={(e) => setContent(e.target.value)} />
+                        <Form.Control as="textarea" placeholder="Create a blog here!" style={textAreaStyle} onChange={(e) => setContent(e.target.value)} defaultValue={content} />
                     </FloatingLabel>
                 </Form.Group>
                 <div style={buttonStyle}>
