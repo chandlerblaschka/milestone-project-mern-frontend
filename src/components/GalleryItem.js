@@ -28,11 +28,11 @@ const GalleryItem = (props) => {
                         <Card.Img variant="top" src='' />
                         <Card.Body>
                             <Card.Title>{card.post_title}</Card.Title>
-                            <Card.Subtitle>{card.post_author}</Card.Subtitle>
-                            {/* <Card.Text>{card.post_content}</Card.Text> */}
+                            <Card.Subtitle >{card.post_author}</Card.Subtitle>
+                            <Card.Text className="cardContent text-muted">{card.post_content}</Card.Text>
                         </Card.Body>
-                        <Card.Footer>
-                            <small className="text-muted">{dateFormatting}</small>
+                        <Card.Footer style={{ backgroundColor: "#313D53" }}>
+                            <small style={{ color: "#FE769B" }}>{dateFormatting}</small>
                         </Card.Footer>
                     </Card>
                 </CardGroup>
