@@ -15,7 +15,6 @@ function App() {
       const response = await fetch(`http://localhost:3000/posts`)
       const resData = await response.json()
       setData(resData)
-      console.log(resData)
     }
     fetchData()
   }, [])

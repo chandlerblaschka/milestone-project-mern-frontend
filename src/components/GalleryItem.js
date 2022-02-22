@@ -17,7 +17,7 @@ const GalleryItem = (props) => {
 
     return (
         <div style={divStyle}>
-            <Link to={`/postShow/${props.index}`}>
+            <Link to={`/postShow/${props.cardId}`}>
             <CardGroup>
                 <Card style={cardStyle}>
                     <Card.Img variant="top" src='' />
