@@ -16,7 +16,7 @@ const Gallery = (props) => {
 
     if (cards) {
         cardsList = cards.map((card, index) => {
-            return <GalleryItem data={card} key={index} index={index}/>;
+            return <GalleryItem data={card} key={index} cardId = {card.id}/>;
         })
     }
 

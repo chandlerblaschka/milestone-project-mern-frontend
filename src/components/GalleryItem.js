@@ -22,7 +22,7 @@ const GalleryItem = (props) => {
 
     return (
         <div style={divStyle}>
-            <Link to={`/postShow/${props.index}`} style={{ textDecoration: "none", color: "black" }} >
+            <Link to={`/postShow/${props.cardId}`} style={{ textDecoration: "none", color: "black" }} >
                 <CardGroup className="cardStyleHover">
                     <Card style={cardStyle} >
                         <Card.Img variant="top" src='' />
