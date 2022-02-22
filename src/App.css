@@ -47,3 +47,22 @@
   background-position: center;
   background-size: 100%;
 }
+
+.headerLink {
+  color: #FE769B;
+  display: flex;
+  justify-content: center;
+  border-bottom: 2px solid #313D53;
+  width: fit-content;
+  margin: 0px auto 0px auto !important;
+  padding-bottom: 10px;
+}
+
+.headerLink:hover {
+  color: #ffb6c9;
+  border-bottom: 2px solid #ffb6c9;
+  width: fit-content;
+  margin: 0px auto 0px auto !important;
+  padding-bottom: 10px;
+  transition: .5s;
+}
