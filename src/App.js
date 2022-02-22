@@ -2,6 +2,7 @@ import './App.css';
 import BlogNavBar from './components/BlogNavBar';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Gallery from './components/Gallery';
+import NewPost from './components/NewPost';
 
 function App() {
   return (
@@ -13,9 +14,9 @@ function App() {
             <Gallery />
           } />
           {/* NEW POST */}
-          {/* <Route path="/newPost" element={
-            
-          } /> */}
+          <Route path="/newPost" element={
+            <NewPost />
+          } />
           {/* EDIT POST */}
           {/* <Route path="/editPost" element={
 
