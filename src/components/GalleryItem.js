@@ -2,35 +2,40 @@ import React from "react";
 import Card from "react-bootstrap/Card";
 import CardGroup from "react-bootstrap/CardGroup";
 import { Link } from "react-router-dom";
+import dateFormat from "dateformat";
 
 const GalleryItem = (props) => {
     const card = props.data
 
     const cardStyle = {
-        width: "250px",
+        width: "300px",
+        border: "none",
+        boxShadow: "0px 0px 10px .5px lightgrey"
         // height: "200px",
     }
 
     const divStyle = {
-        padding: "10px"
+        padding: "20px"
     }
+
+    const dateFormatting = dateFormat(`${card.post_date}`, "mmmm dS, yyyy")
 
     return (
         <div style={divStyle}>
-            <Link to={`/postShow/${props.cardId}`}>
-            <CardGroup>
-                <Card style={cardStyle}>
-                    <Card.Img variant="top" src='' />
-                    <Card.Body>
-                        <Card.Title>{card.post_title}</Card.Title>
-                        <Card.Subtitle>{card.post_author}</Card.Subtitle>
-                        <Card.Text>{card.post_content}</Card.Text>
-                    </Card.Body>
-                    <Card.Footer>
-                        <small className="text-muted">{card.post_date}</small>
-                    </Card.Footer>
-                </Card>
-            </CardGroup>
+            <Link to={`/postShow/${props.cardId}`} style={{ textDecoration: "none", color: "black" }} >
+                <CardGroup className="cardStyleHover">
+                    <Card style={cardStyle} >
+                        <Card.Img variant="top" src='' />
+                        <Card.Body>
+                            <Card.Title>{card.post_title}</Card.Title>
+                            <Card.Subtitle>{card.post_author}</Card.Subtitle>
+                            {/* <Card.Text>{card.post_content}</Card.Text> */}
+                        </Card.Body>
+                        <Card.Footer>
+                            <small className="text-muted">{dateFormatting}</small>
+                        </Card.Footer>
+                    </Card>
+                </CardGroup>
             </Link>
         </div>
     )

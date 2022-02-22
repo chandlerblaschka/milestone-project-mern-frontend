@@ -8,12 +8,12 @@ const NewPost = () => {
     const formStyle = {
         margin: "auto",
         width: "50%",
-        padding: "10px",
+        padding: "10px 10px 50px 10px",
         justifyContent: "center"
     }
 
     const textAreaStyle = {
-        height: "250px",
+        height: "350px",
     }
 
     const nameDateStyle = {
@@ -34,7 +34,15 @@ const NewPost = () => {
     }
 
     const buttonStyle = {
+        paddingTop: "50px",
         textAlign: "center"
+    }
+
+    const titleStyle = {
+        display: "flex",
+        flexDirection: "column",
+        textAlign: "center",
+        padding: "20px"
     }
 
     let [author, setAuthor] = useState("")
@@ -63,7 +71,10 @@ const NewPost = () => {
     }
 
     return (
-        <div>
+        <div className='formBackground'>
+            <div style={titleStyle}>
+                <h1>Write Your Story</h1>
+            </div>
             <Form style={formStyle} onSubmit={(e) => submitPost(e)}>
                 <Form.Group style={{ display: "flex", flexDirection: "column" }}>
                     <div style={nameDateStyle}>
@@ -93,7 +104,7 @@ const NewPost = () => {
                     </FloatingLabel>
                 </Form.Group>
                 <div style={buttonStyle}>
-                    <Button variant="dark" type="submit" >
+                    <Button variant="light" type="submit" >
                         Submit
                     </Button>
                 </div>
