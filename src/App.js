@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
 import BlogNavBar from './components/BlogNavBar';
+import EditPost from './components/EditPost';
 import Gallery from './components/Gallery';
 import NewPost from './components/NewPost';
 import ShowPost from './components/ShowPost';
@@ -43,9 +44,9 @@ function App() {
             <NewPost />
           } />
           {/* EDIT POST */}
-          {/* <Route path="/editPost" element={
-
-          } /> */}
+          <Route path="/editPost/:postId" element={
+            <EditPost />
+          } />
           {/* POST SHOW PAGE */}
           <Route path="/postShow/:postId" element={
             <ShowPost data={data} deletePost={deletePost} />
