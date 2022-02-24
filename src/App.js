@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
 import BlogNavBar from './components/BlogNavBar';
 import EditPost from './components/EditPost';
+import Footer from './components/Footer';
 import Gallery from './components/Gallery';
 import NewPost from './components/NewPost';
 import ShowPost from './components/ShowPost';
@@ -52,6 +53,7 @@ function App() {
             <ShowPost data={data} deletePost={deletePost} />
           } />
         </Routes>
+        <Footer />
       </Router>
     </div>
   );
