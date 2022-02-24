@@ -8,16 +8,22 @@ export default function ShowPost(props) {
   let [author, setAuthor] = useState("")
   let [data, setData] = useState({})
   let [date, setDate] = useState(Date.now())
-
-  const dateFormatted = dateFormat(date, "yyyy-mm-dd")
+  let [content, setContent] = useState({})
+  const dateFormatted = dateFormat(date, "mmmm dS, yyyy")
+  const textAreaStyle = {
+    height: "100px",
+  }
   const formSpacingRight = {
-    paddingLeft: "16px",
+    marginLeft: "16px",
     display: "flex",
     width: "50%",
   }
-
+  const buttonStyle = {
+    paddingTop: "50px",
+    textAlign: "center",
+  }
   const formSpacingLeft = {
-    paddingRight: "16px",
+    marginRight: "16px",
     display: "flex",
     width: "50%",
   }
@@ -27,24 +33,44 @@ export default function ShowPost(props) {
   }
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch(`http://localhost:3000/posts/${postId}`)
+      const response = await fetch(
+        `https://milestone-project-mern-backend.herokuapp.com/posts/${postId}`
+      )
       const resData = await response.json()
       setData(resData)
     }
     fetchData()
   }, [])
 
+  // const submitPost = async (e) => {
+  //   e.preventDefault()
+  //   const post = {
+  //     post_author: author,
+  //     post_title: title,
+  //     post_date: date,
+  //     post_content: content,
+  //   }
+  // }
   return (
     <div className='showPost'>
       <center>
         <h1 className='postTitle'>{data.post_title}</h1>
       </center>
-      <h1>{data.post_author}</h1>
-      <h1 className='postDate'>{data.post_date}</h1>
+      <h1 className='postAuthor'>{data.post_author}</h1>
+      <h1 className='postDate'>{dateFormatted}</h1>
       <p className='postDesc'>{data.post_content}</p>
-      <Button onClick={() => props.deletePost(postId)}>DELETE</Button>{" "}
+      <Button
+        className='btn'
+        variant='primary'
+        size='sm'
+        onClick={() => props.deletePost(postId)}
+      >
+        DELETE
+      </Button>{" "}
       <Link to={`/editPost/${postId}`}>
-        {/* <Button href='#'>EDIT</Button> */}Edit
+        <Button variant='primary' size='sm'>
+          Edit
+        </Button>
       </Link>
       <Form.Group className='mb-3' controlId='exampleForm.ControlTextarea1'>
         <div style={nameDateStyle}>
@@ -60,19 +86,32 @@ export default function ShowPost(props) {
               onChange={(e) => setAuthor(e.target.value)}
             />
           </FloatingLabel>
-          <Form.Control
+          <FloatingLabel
+            controlId='floatingInput'
+            label="Today's Date"
             className='mb-3'
             size='md'
-            type='date'
             style={formSpacingRight}
-            defaultValue={dateFormatted}
-            disabled
-          />
+          >
+            <Form.Control type='date' defaultValue={dateFormatted} disabled />
+          </FloatingLabel>
         </div>
-        <Form.Label>Comment</Form.Label>
-        <Form.Control as='textarea' rows={3} />
+        <FloatingLabel
+          controlId='floatingInput'
+          label='Comment'
+          className='mb-3'
+        >
+          <Form.Control
+            as='textarea'
+            placeholder='Create a blog here!'
+            style={textAreaStyle}
+            onChange={(e) => setContent(e.target.value)}
+          />
+        </FloatingLabel>
       </Form.Group>
-      <Button>Submit</Button>
+      <Button className='btnSubmit' variant='primary' size='sm' type='submit'>
+        Submit
+      </Button>
     </div>
   )
 }
