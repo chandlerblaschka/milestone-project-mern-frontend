@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
 import BlogNavBar from './components/BlogNavBar';
 import EditPost from './components/EditPost';
+import Footer from './components/Footer';
 import Gallery from './components/Gallery';
 import NewPost from './components/NewPost';
 import ShowPost from './components/ShowPost';
@@ -13,7 +14,7 @@ function App() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch(`http://localhost:3000/posts`)
+      const response = await fetch(`https://milestone-project-mern-backend.herokuapp.com/posts`)
       const resData = await response.json()
       setData(resData)
     }
@@ -21,7 +22,7 @@ function App() {
   }, [])
 
   const deletePost = async (postId) => {
-    await fetch(`http://localhost:3000/posts/${postId}`, {
+    await fetch(`https://milestone-project-mern-backend.herokuapp.com/posts/${postId}`, {
       method: "DELETE",
       mode: 'cors',
       headers: {
@@ -52,6 +53,7 @@ function App() {
             <ShowPost data={data} deletePost={deletePost} />
           } />
         </Routes>
+        <Footer />
       </Router>
     </div>
   );

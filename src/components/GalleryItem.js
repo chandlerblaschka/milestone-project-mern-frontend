@@ -10,8 +10,9 @@ const GalleryItem = (props) => {
     const cardStyle = {
         width: "300px",
         border: "none",
-        boxShadow: "0px 0px 10px .5px lightgrey"
-        // height: "200px",
+        boxShadow: "0px 0px 10px .5px lightgrey",
+        color: "#313D53",
+        minHeight: "215.19px"
     }
 
     const divStyle = {
@@ -31,8 +32,8 @@ const GalleryItem = (props) => {
                             <Card.Subtitle >{card.post_author}</Card.Subtitle>
                             <Card.Text className="cardContent text-muted">{card.post_content}</Card.Text>
                         </Card.Body>
-                        <Card.Footer style={{ backgroundColor: "#313D53" }}>
-                            <small style={{ color: "#FE769B" }}>{dateFormatting}</small>
+                        <Card.Footer style={{ backgroundColor: "#ECA72C" }}>
+                            <small style={{ color: "#313D53" }}>{dateFormatting}</small>
                         </Card.Footer>
                     </Card>
                 </CardGroup>

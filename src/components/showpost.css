@@ -5,10 +5,11 @@
   flex-direction: column;
   border: black;
   background-color: #fdfbfb;
-  position: relative;
+  position: absolute;
   border-radius: 20px;
   display: flex;
   align-items: center;
+  position: absolute;
 }
 .showPost ::before {
   content: "";
@@ -43,6 +44,8 @@
   line-height: 24px;
   color: black;
   margin-top: 15px;
+  margin-left: 10px;
+  margin-right: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -50,7 +53,8 @@
 .btn {
 }
 
-.btnSubmit {
+/* .btnSubmit {
   background: linear-gradient(45deg, #ffd70e, #ff38ac);
   margin-top: -10px;
-}
+  position: relative;
+} */

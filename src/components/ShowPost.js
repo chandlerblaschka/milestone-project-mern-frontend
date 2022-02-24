@@ -9,6 +9,8 @@ export default function ShowPost(props) {
   let [data, setData] = useState({})
   let [date, setDate] = useState(Date.now())
   let [content, setContent] = useState({})
+  let [comments, setComments] = useState([])
+  const dateFormattedToday = dateFormat(date, "yyyy-mm-dd")
   const dateFormatted = dateFormat(date, "mmmm dS, yyyy")
   const textAreaStyle = {
     height: "100px",
@@ -38,19 +40,45 @@ export default function ShowPost(props) {
       )
       const resData = await response.json()
       setData(resData)
+      setComments(resData.comments)
+      console.log(resData)
     }
     fetchData()
   }, [])
 
-  // const submitPost = async (e) => {
-  //   e.preventDefault()
-  //   const post = {
-  //     post_author: author,
-  //     post_title: title,
-  //     post_date: date,
-  //     post_content: content,
-  //   }
-  // }
+  const submitComment = async (e) => {
+    e.preventDefault()
+    const comment = {
+      comment_author: author,
+      comment_date: date,
+      comment_content: content,
+      post: postId,
+    }
+    await fetch(
+      `https://milestone-project-mern-backend.herokuapp.com/comments`,
+      {
+        method: "POST",
+        mode: "cors",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(comment),
+      }
+    )
+    window.location = `/postShow/${postId}`
+  }
+  let commentsDisplay = <p>no comments yet</p>
+  if (comments) {
+    commentsDisplay = comments.map((comment, index) => {
+      return (
+        <div>
+          <h2>{comment.comment_author}</h2>
+          <p>{comment.comment_date}</p>
+          <p>{comment.comment_content}</p>
+        </div>
+      )
+    })
+  }
   return (
     <div className='showPost'>
       <center>
@@ -93,7 +121,11 @@ export default function ShowPost(props) {
             size='md'
             style={formSpacingRight}
           >
-            <Form.Control type='date' defaultValue={dateFormatted} disabled />
+            <Form.Control
+              type='date'
+              defaultValue={dateFormattedToday}
+              disabled
+            />
           </FloatingLabel>
         </div>
         <FloatingLabel
@@ -109,9 +141,16 @@ export default function ShowPost(props) {
           />
         </FloatingLabel>
       </Form.Group>
-      <Button className='btnSubmit' variant='primary' size='sm' type='submit'>
+      <Button
+        className='btnSubmit'
+        variant='primary'
+        size='sm'
+        type='submit'
+        onClick={(e) => submitComment(e)}
+      >
         Submit
       </Button>
+      {commentsDisplay}
     </div>
   )
 }

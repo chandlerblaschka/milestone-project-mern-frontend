@@ -36,14 +36,14 @@ const NewPost = () => {
 
     const buttonStyle = {
         paddingTop: "50px",
-        textAlign: "center"
+        textAlign: "center",
     }
 
     const titleStyle = {
         display: "flex",
         flexDirection: "column",
         textAlign: "center",
-        padding: "20px"
+        padding: "30px 30px 5px 30px"
     }
 
     let [author, setAuthor] = useState("")
@@ -62,7 +62,7 @@ const NewPost = () => {
             post_content: content
         }
 
-        await fetch("http://localhost:3000/posts", {
+        await fetch("https://milestone-project-mern-backend.herokuapp.com/posts", {
             method: "POST",
             mode: 'cors',
             headers: {
@@ -115,7 +115,7 @@ const NewPost = () => {
                     </FloatingLabel>
                 </Form.Group>
                 <div style={buttonStyle}>
-                    <Button variant="light" type="submit" >
+                    <Button type="submit" style={{ backgroundColor: "#ECA72C", borderColor: "#ECA72C", color: "#313D53" }} >
                         Submit
                     </Button>
                 </div>
