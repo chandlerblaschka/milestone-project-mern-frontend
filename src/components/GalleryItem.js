@@ -11,8 +11,8 @@ const GalleryItem = (props) => {
         width: "300px",
         border: "none",
         boxShadow: "0px 0px 10px .5px lightgrey",
-        color: "#313D53"
-        // height: "200px",
+        color: "#313D53",
+        minHeight: "215.19px"
     }
 
     const divStyle = {
