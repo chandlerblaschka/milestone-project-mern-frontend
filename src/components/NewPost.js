@@ -23,13 +23,13 @@ const NewPost = () => {
     }
 
     const formSpacingRight = {
-        paddingLeft: "16px",
+        marginLeft: "16px",
         display: "flex",
         width: "50%"
     }
 
     const formSpacingLeft = {
-        paddingRight: "16px",
+        marginRight: "16px",
         display: "flex",
         width: "50%"
     }
@@ -89,7 +89,15 @@ const NewPost = () => {
                         >
                             <Form.Control type="text" placeholder="John Doe" onChange={(e) => setAuthor(e.target.value)} />
                         </FloatingLabel>
-                        <Form.Control className="mb-3" size="md" type="date" style={formSpacingRight} defaultValue={dateFormatted} disabled />
+                        <FloatingLabel
+                            controlId="floatingInput"
+                            label="Today's Date"
+                            className="mb-3"
+                            size="md"
+                            style={formSpacingRight}
+                        >
+                            <Form.Control type="date" defaultValue={dateFormatted} disabled />
+                        </FloatingLabel>
                     </div>
                     <FloatingLabel
                         controlId="floatingInput"
