@@ -45,7 +45,7 @@ const Gallery = (props) => {
 
     return (
         <div >
-            <div style={{ display: "flex", flexDirection: "row", width: "100%", justifyContent: "space-between", alignItems: "center", backgroundColor: "#313D53" }}>
+            <div style={{ display: "flex", flexDirection: "row", width: "100%", justifyContent: "space-between", alignItems: "center", backgroundColor: "#313D53", marginTop: "60px" }}>
                 <div style={headerText}>
                     <h1 style={{ display: "flex", justifyContent: "center" }}>See what people are talking about below!</h1>
                     <Link to={`/NewPost`} style={{ textDecoration: "none", justifyContent: "center" }}>
