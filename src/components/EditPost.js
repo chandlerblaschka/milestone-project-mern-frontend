@@ -47,6 +47,13 @@ const EditPost = () => {
         textAlign: "center"
     }
 
+    const titleStyle = {
+        display: "flex",
+        flexDirection: "column",
+        textAlign: "center",
+        padding: "20px"
+    }
+
     const dateFormatted = dateFormat(date, "yyyy-mm-dd")
 
     useEffect(() => {
@@ -83,7 +90,10 @@ const EditPost = () => {
     }
 
     return (
-        <div>
+        <div className="formBackground">
+            <div style={titleStyle}>
+                <h1>Edit Post</h1>
+            </div>
             <Form style={formStyle} onSubmit={(e) => submitUpdate(e)}>
                 <Form.Group style={{ display: "flex", flexDirection: "column" }}>
                     <div style={nameDateStyle}>
