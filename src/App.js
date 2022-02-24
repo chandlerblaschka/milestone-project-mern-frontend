@@ -13,7 +13,7 @@ function App() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch(`http://localhost:3000/posts`)
+      const response = await fetch(`https://milestone-project-mern-backend.herokuapp.com/posts`)
       const resData = await response.json()
       setData(resData)
     }
@@ -21,7 +21,7 @@ function App() {
   }, [])
 
   const deletePost = async (postId) => {
-    await fetch(`http://localhost:3000/posts/${postId}`, {
+    await fetch(`https://milestone-project-mern-backend.herokuapp.com/posts/${postId}`, {
       method: "DELETE",
       mode: 'cors',
       headers: {
