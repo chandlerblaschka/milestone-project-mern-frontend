@@ -10,7 +10,7 @@ const BlogNavBar = () => {
     return (
         <Navbar style={navStyle} fixed="top">
             <Container >
-                <Link to="/" className="nav-link" style={{ padding: "5px 10px 5px 10px" }} >
+                <Link to="/" className="nav-link"  >
                     <Navbar.Brand style={{ color: "#ECA72C", border: "#ECA72C 2px solid", padding: "5px 10px 5px 10px" }} >Blog.it</Navbar.Brand>
                 </Link>
                 <Nav className="me-auto">
