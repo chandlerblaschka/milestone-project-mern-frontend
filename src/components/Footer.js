@@ -5,9 +5,10 @@ const Footer = () => {
         <Navbar expand="lg" variant="light" bg="light">
             <Container>
                 <Navbar.Brand href="#">Blog.it</Navbar.Brand>
-                <Nav.Link href="#" disabled>
-                    Made by <a href="#">Albert Nikolai Poliarco</a>, <a href="#">Chandler Blaschka</a>, and <a href="#">Derek Slauson</a>
-                </Nav.Link>
+                <Container>
+                    {/* align right? */}
+                    Made by <a href="https://www.linkedin.com/in/nik-poliarco-3aaa181a3/" target="_blank">Albert Nikolai Poliarco</a>, <a href="https://www.linkedin.com/in/chandler-blaschka-532547b2/" target="_blank">Chandler Blaschka</a>, and <a href="#">Derek Slauson</a>
+                </Container>
             </Container>
         </Navbar>
     )
