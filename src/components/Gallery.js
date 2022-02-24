@@ -34,7 +34,7 @@ const Gallery = (props) => {
         width: "60%",
         textAlign: "center",
         alignContent: "center",
-        justifyContent: "center"
+        justifyContent: "center",
     }
 
     if (cards) {
@@ -45,9 +45,9 @@ const Gallery = (props) => {
 
     return (
         <div >
-            <div style={{ display: "flex", flexDirection: "row", width: "100%", justifyContent: "space-between", alignItems: "center", backgroundColor: "#313D53", marginTop: "60px" }}>
+            <div style={{ display: "flex", flexDirection: "row", width: "100%", justifyContent: "end", alignItems: "center", backgroundColor: "#313D53", marginTop: "60px" }}>
                 <div style={headerText}>
-                    <h1 style={{ display: "flex", justifyContent: "center" }}>See what people are talking about below!</h1>
+                    <h1 style={{ display: "flex", justifyContent: "center", color: "#F1F8F9" }}>See what people are talking about below!</h1>
                     <Link to={`/NewPost`} style={{ textDecoration: "none", justifyContent: "center" }}>
                         <h3 className='headerLink' >Or write your own story!< TiArrowRightThick style={{ verticalAlign: "middle", marginLeft: "10px", marginTop: "3px" }} /></h3>
                     </Link>
