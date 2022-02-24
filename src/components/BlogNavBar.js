@@ -4,19 +4,18 @@ import { Link } from "react-router-dom"
 const BlogNavBar = () => {
 
     const navStyle = {
-        backgroundColor: "#313D53",
-
+        backgroundColor: "#2D384D",
     }
 
     return (
         <Navbar style={navStyle} fixed="top">
-            <Container style={{ color: "#313D53" }}>
-                <Link to="/" className="nav-link">
-                    <Navbar.Brand>Blog.it</Navbar.Brand>
+            <Container >
+                <Link to="/" className="nav-link"  >
+                    <Navbar.Brand style={{ color: "#ECA72C", border: "#ECA72C 2px solid", padding: "5px 10px 5px 10px" }} >Blog.it</Navbar.Brand>
                 </Link>
                 <Nav className="me-auto">
-                    <Link to="/" className="nav-link">Posts</Link>
-                    <Link to="/newPost" className="nav-link">Create Post</Link>
+                    <Link to="/" className="nav-link" style={{ color: "#ECA72C" }}>Posts</Link>
+                    <Link to="/newPost" className="nav-link" style={{ color: "#ECA72C" }}>Create Post</Link>
                 </Nav>
             </Container>
         </Navbar>
