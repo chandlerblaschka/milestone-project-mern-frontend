@@ -80,3 +80,8 @@
 h1, h2, h3, h4, h5, h6 {
   color: #313D53;
 }
+
+.nav-link:hover {
+  color: #F1F8F9 !important;
+  transition: .5s;
+}
