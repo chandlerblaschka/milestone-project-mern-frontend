@@ -17,6 +17,7 @@ const EditPost = () => {
     const formStyle = {
         margin: "auto",
         width: "50%",
+        minWidth: "200px",
         padding: "10px 10px 50px 10px",
         justifyContent: "center"
     }
@@ -27,19 +28,21 @@ const EditPost = () => {
 
     const nameDateStyle = {
         display: "flex",
-        flexDirection: "row"
+        flexDirection: "row",
+        flexWrap: "wrap",
+        justifyContent: "space-between"
     }
 
     const formSpacingRight = {
-        marginLeft: "16px",
         display: "flex",
-        width: "50%"
+        width: "48%",
+        minWidth: "180px"
     }
 
     const formSpacingLeft = {
-        marginRight: "16px",
         display: "flex",
-        width: "50%"
+        width: "48%",
+        minWidth: "180px"
     }
 
     const buttonStyle = {
@@ -51,7 +54,7 @@ const EditPost = () => {
         display: "flex",
         flexDirection: "column",
         textAlign: "center",
-        padding: "20px"
+        padding: "30px 30px 5px 30px"
     }
 
     const dateFormatted = dateFormat(date, "yyyy-mm-dd")
