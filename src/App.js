@@ -32,6 +32,17 @@ function App() {
     window.location = "/"
   }
 
+  const deleteComment = async (commentId) => {
+    await fetch(`https://milestone-project-mern-backend.herokuapp.com/comments/${commentId}`, {
+      method: "DELETE",
+      mode: 'cors',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    window.location.reload()
+  }
+
   return (
     <div className="App">
       <Router>
@@ -50,7 +61,7 @@ function App() {
           } />
           {/* POST SHOW PAGE */}
           <Route path="/postShow/:postId" element={
-            <ShowPost data={data} deletePost={deletePost} />
+            <ShowPost data={data} deletePost={deletePost} deleteComment={deleteComment} />
           } />
         </Routes>
         <Footer />
