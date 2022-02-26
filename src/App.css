@@ -77,6 +77,14 @@
   text-overflow: ellipsis;
 }
 
+.cardTitle {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 h1, h2, h3, h4, h5, h6 {
   color: #313D53;
 }
@@ -85,3 +93,4 @@ h1, h2, h3, h4, h5, h6 {
   color: #F1F8F9 !important;
   transition: .5s;
 }
+

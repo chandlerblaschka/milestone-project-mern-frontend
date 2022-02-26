@@ -15,7 +15,7 @@ const Gallery = (props) => {
         flexWrap: "wrap",
 
     }
-
+    
     const headerImageStyle = {
         maxWidth: "50%",
         height: "100%",
