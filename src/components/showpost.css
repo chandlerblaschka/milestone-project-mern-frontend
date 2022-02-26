@@ -23,8 +23,8 @@
 .commentHeader {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  align-items: baseline;
+  justify-content: flex-start;
+  align-items: center;
 }
 .postTitle {
   padding: 10px;
@@ -32,7 +32,7 @@
   font-family: sans-serif;
   font-size: 30px;
   font-weight: 900;
-  border-bottom: solid 2px #a7a4a4;
+  border-bottom: solid 2px #313D53;
   width: 50%;
 }
 .postAuthor {
@@ -43,7 +43,7 @@
 .postDate {
   font-family: "Lora", serif;
   font-style: italic;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 500;
   color: #999999;
   /* margin-top: 15px; */
@@ -54,7 +54,8 @@
   font-size: 15px;
   font-weight: 500;
   color: #999999;
-  margin: 0;
+  margin: 3px 0 0 10px;
+  flex-grow: 1;
   /* margin-top: 15px; */
 }
 .commentContent {
@@ -64,6 +65,7 @@
   width: 100px;
   background-color: #eca72c !important;
   border-color: #eca72c !important;
+  color: #313D53 !important;
 }
 .commentSubmit {
   display: flex;
@@ -84,7 +86,7 @@
 }
 .button {
   width: 50px;
-  background: white !important;
+  background: #FDFBFB !important;
   color: #313d53 !important;
   border: none !important;
   padding: 10px 20px !important;

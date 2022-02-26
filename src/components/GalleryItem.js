@@ -26,9 +26,8 @@ const GalleryItem = (props) => {
             <Link to={`/postShow/${props.cardId}`} style={{ textDecoration: "none", color: "black" }} >
                 <CardGroup className="cardStyleHover">
                     <Card style={cardStyle} >
-                        <Card.Img variant="top" src='' />
                         <Card.Body>
-                            <Card.Title>{card.post_title}</Card.Title>
+                            <Card.Title className="cardTitle">{card.post_title}</Card.Title>
                             <Card.Subtitle >{card.post_author}</Card.Subtitle>
                             <Card.Text className="cardContent text-muted">{card.post_content}</Card.Text>
                         </Card.Body>

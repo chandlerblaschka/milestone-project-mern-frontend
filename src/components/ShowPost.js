@@ -10,33 +10,34 @@ export default function ShowPost(props) {
   const { postId } = useParams()
   let [author, setAuthor] = useState("")
   let [data, setData] = useState({})
+  let [postDate, setPostDate] = useState('')
   let [date, setDate] = useState(Date.now())
   let [content, setContent] = useState({})
   let [comments, setComments] = useState([])
   const dateFormattedToday = dateFormat(date, "yyyy-mm-dd")
-  const dateFormatted = dateFormat(date, "mmmm dS, yyyy")
+  let dateFormatted = dateFormat(`${postDate}`, "mmmm dS, yyyy")
   const dateComments = dateFormat(date, "mmmm dS, yyyy")
   const textAreaStyle = {
     height: "100px",
+    fontSize: "12px"
   }
   const formSpacingRight = {
-    marginLeft: "16px",
     display: "flex",
-    width: "50%",
-    fontSize: "10px",
+    width: "48%",
+    minWidth: "180px",
+    fontSize: "12px",
   }
-  const buttonStyle = {
-    paddingTop: "50px",
-    textAlign: "center",
-  }
+
   const formSpacingLeft = {
-    marginRight: "16px",
     display: "flex",
-    width: "50%",
+    width: "48%",
+    minWidth: "180px",
+    fontSize: "12px"
   }
   const nameDateStyle = {
     display: "flex",
     flexDirection: "row",
+    justifyContent: "space-between"
   }
   useEffect(() => {
     const fetchData = async () => {
@@ -46,7 +47,7 @@ export default function ShowPost(props) {
       const resData = await response.json()
       setData(resData)
       setComments(resData.comments)
-      console.log(resData)
+      setPostDate(resData.post_date)
     }
     fetchData()
   }, [])
@@ -72,17 +73,30 @@ export default function ShowPost(props) {
     )
     window.location = `/postShow/${postId}`
   }
+
+
+
   let commentsDisplay = <p>no comments yet</p>
   if (comments) {
     commentsDisplay = comments.map((comment, index) => {
       return (
         <div key={index}>
           <div className='commentHeader'>
-            <h4 style={{ display: "flex", alignItems: "center", margin: "0" }}>
+            <h5 style={{ display: "flex", alignItems: "center", margin: "0", fontSize: "17px" }}>
               <BsFillPersonFill />
               {comment.comment_author}
-            </h4>
+            </h5>
             <p className='commentDate'>{dateComments}</p>
+            <div>
+              <Button
+                className='button'
+                variant='primary'
+                size='sm'
+                onClick={() => props.deleteComment(comment.id)}
+              >
+                <BsTrash />
+              </Button>
+            </div>
           </div>
           <p className='commentContent'>{comment.comment_content}</p>
         </div>
@@ -120,14 +134,13 @@ export default function ShowPost(props) {
         <p className='postDesc'>{data.post_content}</p>
 
         <Form.Group className='mb-3' controlId='exampleForm.ControlTextarea1'>
-          <h2>Write a comment</h2>
+          <h4>Write a comment</h4>
           <div style={nameDateStyle}>
             <FloatingLabel
               controlId='floatingInput'
               label='Your Name'
               className='mb-3'
               style={formSpacingLeft}
-              size='sm'
             >
               <Form.Control
                 type='text'
