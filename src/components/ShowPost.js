@@ -1,8 +1,11 @@
 import dateFormat from "dateformat"
 import React, { useEffect, useState } from "react"
 import { Button, FloatingLabel, Form } from "react-bootstrap"
+import { BsFillPersonFill, BsTrash } from "react-icons/bs"
+import { FiEdit } from "react-icons/fi"
 import { Link, useParams } from "react-router-dom"
 import "./showpost.css"
+
 export default function ShowPost(props) {
   const { postId } = useParams()
   let [author, setAuthor] = useState("")
@@ -12,6 +15,7 @@ export default function ShowPost(props) {
   let [comments, setComments] = useState([])
   const dateFormattedToday = dateFormat(date, "yyyy-mm-dd")
   const dateFormatted = dateFormat(date, "mmmm dS, yyyy")
+  const dateComments = dateFormat(date, "mmmm dS, yyyy")
   const textAreaStyle = {
     height: "100px",
   }
@@ -19,6 +23,7 @@ export default function ShowPost(props) {
     marginLeft: "16px",
     display: "flex",
     width: "50%",
+    fontSize: "10px",
   }
   const buttonStyle = {
     paddingTop: "50px",
@@ -71,86 +76,106 @@ export default function ShowPost(props) {
   if (comments) {
     commentsDisplay = comments.map((comment, index) => {
       return (
-        <div>
-          <h2>{comment.comment_author}</h2>
-          <p>{comment.comment_date}</p>
-          <p>{comment.comment_content}</p>
+        <div key={index}>
+          <div className='commentHeader'>
+            <h4 style={{ display: "flex", alignItems: "center", margin: "0" }}>
+              <BsFillPersonFill />
+              {comment.comment_author}
+            </h4>
+            <p className='commentDate'>{dateComments}</p>
+          </div>
+          <p className='commentContent'>{comment.comment_content}</p>
         </div>
       )
     })
   }
   return (
-    <div className='showPost'>
-      <center>
-        <h1 className='postTitle'>{data.post_title}</h1>
-      </center>
-      <h1 className='postAuthor'>{data.post_author}</h1>
-      <h1 className='postDate'>{dateFormatted}</h1>
-      <p className='postDesc'>{data.post_content}</p>
-      <Button
-        className='btn'
-        variant='primary'
-        size='sm'
-        onClick={() => props.deletePost(postId)}
-      >
-        DELETE
-      </Button>{" "}
-      <Link to={`/editPost/${postId}`}>
-        <Button variant='primary' size='sm'>
-          Edit
-        </Button>
-      </Link>
-      <Form.Group className='mb-3' controlId='exampleForm.ControlTextarea1'>
-        <div style={nameDateStyle}>
-          <FloatingLabel
-            controlId='floatingInput'
-            label='Your Name'
-            className='mb-3'
-            style={formSpacingLeft}
-          >
-            <Form.Control
-              type='text'
-              placeholder='John Doe'
-              onChange={(e) => setAuthor(e.target.value)}
-            />
-          </FloatingLabel>
-          <FloatingLabel
-            controlId='floatingInput'
-            label="Today's Date"
-            className='mb-3'
-            size='md'
-            style={formSpacingRight}
-          >
-            <Form.Control
-              type='date'
-              defaultValue={dateFormattedToday}
-              disabled
-            />
-          </FloatingLabel>
+    <div className='showPostContainer'>
+      <div className='showPost'>
+        <center>
+          <h1 className='postTitle'>{data.post_title}</h1>
+        </center>
+        <div className='titleBtn'>
+          <div className='authorFormat'>
+            <h1 className='postAuthor'>{data.post_author}</h1>
+          </div>
+          <div className='contentBtn'>
+            <Button
+              className='button'
+              variant='primary'
+              size='sm'
+              onClick={() => props.deletePost(postId)}
+            >
+              <BsTrash />
+            </Button>
+
+            <Link to={`/editPost/${postId}`}>
+              <Button className='button' variant='primary' size='sm'>
+                <FiEdit />
+              </Button>
+            </Link>
+          </div>
         </div>
-        <FloatingLabel
-          controlId='floatingInput'
-          label='Comment'
-          className='mb-3'
-        >
-          <Form.Control
-            as='textarea'
-            placeholder='Create a blog here!'
-            style={textAreaStyle}
-            onChange={(e) => setContent(e.target.value)}
-          />
-        </FloatingLabel>
-      </Form.Group>
-      <Button
-        className='btnSubmit'
-        variant='primary'
-        size='sm'
-        type='submit'
-        onClick={(e) => submitComment(e)}
-      >
-        Submit
-      </Button>
-      {commentsDisplay}
+        <h1 className='postDate'>{dateFormatted}</h1>
+        <p className='postDesc'>{data.post_content}</p>
+
+        <Form.Group className='mb-3' controlId='exampleForm.ControlTextarea1'>
+          <h2>Write a comment</h2>
+          <div style={nameDateStyle}>
+            <FloatingLabel
+              controlId='floatingInput'
+              label='Your Name'
+              className='mb-3'
+              style={formSpacingLeft}
+              size='sm'
+            >
+              <Form.Control
+                type='text'
+                size='sm'
+                placeholder='John Doe'
+                onChange={(e) => setAuthor(e.target.value)}
+              />
+            </FloatingLabel>
+            <FloatingLabel
+              controlId='floatingInput'
+              label="Today's Date"
+              className='mb-3'
+              size='sm'
+              style={formSpacingRight}
+            >
+              <Form.Control
+                type='date'
+                defaultValue={dateFormattedToday}
+                disabled
+              />
+            </FloatingLabel>
+          </div>
+          <FloatingLabel
+            controlId='floatingInput'
+            label='Comment'
+            className='mb-3'
+          >
+            <Form.Control
+              as='textarea'
+              placeholder='Create a blog here!'
+              style={textAreaStyle}
+              onChange={(e) => setContent(e.target.value)}
+            />
+          </FloatingLabel>
+        </Form.Group>
+        <div className='commentSubmit'>
+          <Button
+            className='commentBtn'
+            variant='primary'
+            size='sm'
+            type='submit'
+            onClick={(e) => submitComment(e)}
+          >
+            Submit
+          </Button>
+        </div>
+        {commentsDisplay}
+      </div>
     </div>
   )
 }

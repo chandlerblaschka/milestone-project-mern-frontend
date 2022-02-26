@@ -1,60 +1,113 @@
 .showPost {
-  width: 90%;
-  margin: 70px -20px 50px 50px;
+  width: 60%;
+  padding: 20px 30px 50px 30px;
+  margin: auto;
+  justify-content: center;
   display: flex;
   flex-direction: column;
-  border: black;
   background-color: #fdfbfb;
-  position: absolute;
-  border-radius: 20px;
   display: flex;
-  align-items: center;
-  position: absolute;
+  /* align-items: center; */
+  box-shadow: 0px 0px 10px 5px lightgray;
 }
-.showPost ::before {
+.showPostContainer {
+  padding: 100px 0 100px 0;
+}
+/* .showPost ::before {
   content: "";
   position: absolute;
   inset: -5px;
   z-index: -1;
   border-radius: 25px;
-  background: linear-gradient(45deg, #ffd70e, #ff38ac);
+} */
+.commentHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
 }
 .postTitle {
+  padding: 10px;
+  margin-bottom: 20px;
   font-family: sans-serif;
   font-size: 30px;
   font-weight: 900;
-  margin-top: 15px;
-  border-top: solid 2px #a7a4a4;
   border-bottom: solid 2px #a7a4a4;
+  width: 50%;
 }
 .postAuthor {
-  color: #be9656;
+  color: #eca72c;
+  font-size: 20px;
+  margin: 0;
 }
 .postDate {
   font-family: "Lora", serif;
   font-style: italic;
-  font-size: 25px;
+  font-size: 20px;
   font-weight: 500;
   color: #999999;
-  margin-top: 15px;
+  /* margin-top: 15px; */
+}
+.commentDate {
+  font-family: "Lora", serif;
+  font-style: italic;
+  font-size: 15px;
+  font-weight: 500;
+  color: #999999;
+  margin: 0;
+  /* margin-top: 15px; */
+}
+.commentContent {
+  margin-bottom: 20px;
+}
+.commentBtn {
+  width: 100px;
+  background-color: #eca72c !important;
+  border-color: #eca72c !important;
+}
+.commentSubmit {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
 }
 .postDesc {
   font-family: sans-serif;
   font-size: 14px;
   line-height: 24px;
   color: black;
-  margin-top: 15px;
-  margin-left: 10px;
-  margin-right: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 50px;
+  border-bottom: #313d53 1px solid;
+  padding-bottom: 50px;
 }
-.btn {
+.button {
+  width: 50px;
+  background: white !important;
+  color: #313d53 !important;
+  border: none !important;
+  padding: 10px 20px !important;
+  margin: 2px !important;
+  border-radius: 5px !important;
+  cursor: pointer;
+  text-decoration: none !important;
+  font-size: 15px !important;
+  font-family: inherit !important;
 }
-
-/* .btnSubmit {
-  background: linear-gradient(45deg, #ffd70e, #ff38ac);
-  margin-top: -10px;
-  position: relative;
-} */
+.contentBtn {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.titleBtn {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.authorFormat {
+  display: flex;
+  align-content: center !important;
+}
