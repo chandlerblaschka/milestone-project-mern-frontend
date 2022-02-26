@@ -9,6 +9,7 @@ const NewPost = () => {
     const formStyle = {
         margin: "auto",
         width: "50%",
+        minWidth: "200px",
         padding: "10px 10px 50px 10px",
         justifyContent: "center"
     }
@@ -19,19 +20,21 @@ const NewPost = () => {
 
     const nameDateStyle = {
         display: "flex",
-        flexDirection: "row"
+        flexDirection: "row",
+        flexWrap: "wrap",
+        justifyContent: "space-between"
     }
 
     const formSpacingRight = {
-        marginLeft: "16px",
         display: "flex",
-        width: "50%"
+        width: "48%",
+        minWidth: "180px"
     }
 
     const formSpacingLeft = {
-        marginRight: "16px",
         display: "flex",
-        width: "50%"
+        width: "48%",
+        minWidth: "180px"
     }
 
     const buttonStyle = {
