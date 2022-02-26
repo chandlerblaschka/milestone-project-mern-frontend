@@ -18,7 +18,7 @@ export default function ShowPost(props) {
   let dateFormatted = dateFormat(`${postDate}`, "mmmm dS, yyyy")
   const dateComments = dateFormat(date, "mmmm dS, yyyy")
   const textAreaStyle = {
-    height: "100px",
+    height: "75px",
     fontSize: "12px"
   }
   const formSpacingRight = {
@@ -92,7 +92,7 @@ export default function ShowPost(props) {
                 className='button'
                 variant='primary'
                 size='sm'
-                onClick={() => props.deleteComment(comment.id)}
+                onClick={() => props.deleteComment(comment._id)}
               >
                 <BsTrash />
               </Button>
@@ -160,6 +160,7 @@ export default function ShowPost(props) {
                 type='date'
                 defaultValue={dateFormattedToday}
                 disabled
+                style={{ fontSize: "12px" }}
               />
             </FloatingLabel>
           </div>
@@ -167,6 +168,7 @@ export default function ShowPost(props) {
             controlId='floatingInput'
             label='Comment'
             className='mb-3'
+            style={{ fontSize: "12px" }}
           >
             <Form.Control
               as='textarea'
