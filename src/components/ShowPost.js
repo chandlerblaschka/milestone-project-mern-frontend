@@ -16,7 +16,7 @@ export default function ShowPost(props) {
   let [comments, setComments] = useState([])
   const dateFormattedToday = dateFormat(date, "yyyy-mm-dd")
   let dateFormatted = dateFormat(`${postDate}`, "mmmm dS, yyyy")
-  const dateComments = dateFormat(date, "mmmm dS, yyyy")
+
   const textAreaStyle = {
     height: "75px",
     fontSize: "12px"
@@ -27,7 +27,6 @@ export default function ShowPost(props) {
     minWidth: "180px",
     fontSize: "12px",
   }
-
   const formSpacingLeft = {
     display: "flex",
     width: "48%",
@@ -39,6 +38,7 @@ export default function ShowPost(props) {
     flexDirection: "row",
     justifyContent: "space-between"
   }
+
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetch(
@@ -50,7 +50,7 @@ export default function ShowPost(props) {
       setPostDate(resData.post_date)
     }
     fetchData()
-  }, [])
+  }, [postId])
 
   const submitComment = async (e) => {
     e.preventDefault()
@@ -74,11 +74,12 @@ export default function ShowPost(props) {
     window.location = `/postShow/${postId}`
   }
 
-
-
   let commentsDisplay = <p>no comments yet</p>
   if (comments) {
     commentsDisplay = comments.map((comment, index) => {
+
+      let commentDate = dateFormat(comment.comment_date, "mmmm dS, yyyy")
+
       return (
         <div key={index}>
           <div className='commentHeader'>
@@ -86,7 +87,7 @@ export default function ShowPost(props) {
               <BsFillPersonFill />
               {comment.comment_author}
             </h5>
-            <p className='commentDate'>{dateComments}</p>
+            <p className='commentDate'>{commentDate}</p>
             <div>
               <Button
                 className='button'
@@ -103,6 +104,7 @@ export default function ShowPost(props) {
       )
     })
   }
+  
   return (
     <div className='showPostContainer'>
       <div className='showPost'>
