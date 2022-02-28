@@ -17,28 +17,6 @@ export default function ShowPost(props) {
   const dateFormattedToday = dateFormat(date, "yyyy-mm-dd")
   let dateFormatted = dateFormat(`${postDate}`, "mmmm dS, yyyy")
 
-  const textAreaStyle = {
-    height: "75px",
-    fontSize: "12px"
-  }
-  const formSpacingRight = {
-    display: "flex",
-    width: "48%",
-    minWidth: "180px",
-    fontSize: "12px",
-  }
-  const formSpacingLeft = {
-    display: "flex",
-    width: "48%",
-    minWidth: "180px",
-    fontSize: "12px"
-  }
-  const nameDateStyle = {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "space-between"
-  }
-
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetch(
@@ -83,7 +61,7 @@ export default function ShowPost(props) {
       return (
         <div key={index}>
           <div className='commentHeader'>
-            <h5 style={{ display: "flex", alignItems: "center", margin: "0", fontSize: "17px" }}>
+            <h5 className="showH5">
               <BsFillPersonFill />
               {comment.comment_author}
             </h5>
@@ -104,7 +82,7 @@ export default function ShowPost(props) {
       )
     })
   }
-  
+
   return (
     <div className='showPostContainer'>
       <div className='showPost'>
@@ -137,12 +115,11 @@ export default function ShowPost(props) {
 
         <Form.Group className='mb-3' controlId='exampleForm.ControlTextarea1'>
           <h4>Write a comment</h4>
-          <div style={nameDateStyle}>
+          <div className="showNameDateStyle">
             <FloatingLabel
               controlId='floatingInput'
               label='Your Name'
-              className='mb-3'
-              style={formSpacingLeft}
+              className='mb-3 showFormSpacingLeft'
             >
               <Form.Control
                 type='text'
@@ -154,28 +131,26 @@ export default function ShowPost(props) {
             <FloatingLabel
               controlId='floatingInput'
               label="Today's Date"
-              className='mb-3'
+              className='mb-3 showFormSpacingRight'
               size='sm'
-              style={formSpacingRight}
             >
               <Form.Control
                 type='date'
                 defaultValue={dateFormattedToday}
                 disabled
-                style={{ fontSize: "12px" }}
+                className="showFormFont"
               />
             </FloatingLabel>
           </div>
           <FloatingLabel
             controlId='floatingInput'
             label='Comment'
-            className='mb-3'
-            style={{ fontSize: "12px" }}
+            className='mb-3 showFormFont'
           >
             <Form.Control
               as='textarea'
               placeholder='Create a blog here!'
-              style={textAreaStyle}
+              className="showTextAreaStyle"
               onChange={(e) => setContent(e.target.value)}
             />
           </FloatingLabel>
