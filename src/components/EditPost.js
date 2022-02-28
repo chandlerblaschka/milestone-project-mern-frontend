@@ -51,7 +51,7 @@ const EditPost = () => {
 
     return (
         <div className="formBackground">
-            <div className="titleStyle">
+            <div className="formTitleStyle">
                 <h1>Edit Post</h1>
             </div>
             <Form className="formStyle" onSubmit={(e) => submitUpdate(e)}>

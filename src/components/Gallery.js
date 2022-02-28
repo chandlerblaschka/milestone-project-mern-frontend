@@ -8,35 +8,6 @@ const Gallery = (props) => {
 
     let cardsList = []
 
-    const cardGroupStyle = {
-        display: "flex",
-        flexDirection: "row",
-        justifyContent: "center",
-        flexWrap: "wrap",
-
-    }
-    
-    const headerImageStyle = {
-        maxWidth: "50%",
-        height: "100%",
-    }
-
-    const titleStyle = {
-        display: "flex",
-        flexDirection: "column",
-        textAlign: "center",
-        padding: "20px"
-    }
-
-    const headerText = {
-        backgroundColor: "#313D53",
-        color: "white",
-        width: "60%",
-        textAlign: "center",
-        alignContent: "center",
-        justifyContent: "center",
-    }
-
     if (cards) {
         cardsList = cards.map((card, index) => {
             return <GalleryItem data={card} key={index} cardId={card.id} />;
@@ -45,19 +16,20 @@ const Gallery = (props) => {
 
     return (
         <div >
-            <div style={{ display: "flex", flexDirection: "row", width: "100%", justifyContent: "end", alignItems: "center", backgroundColor: "#313D53", marginTop: "60px" }}>
-                <div style={headerText}>
-                    <h1 style={{ display: "flex", justifyContent: "center", color: "#F1F8F9" }}>See what people are talking about below!</h1>
-                    <Link to={`/NewPost`} style={{ textDecoration: "none", justifyContent: "center" }}>
-                        <h3 className='headerLink' >Or write your own story!< TiArrowRightThick style={{ verticalAlign: "middle", marginLeft: "10px", marginTop: "3px" }} /></h3>
+            <div className="headerStyle">
+                <div className="headerText">
+                    <h1 className="headerH1">See what people are talking about below!</h1>
+                    <Link to={`/NewPost`} className="headerLink">
+                        <h3 className='headerLinkH3' >Or write your own story!< TiArrowRightThick style={{ verticalAlign: "middle", marginLeft: "10px", marginTop: "3px" }} /></h3>
                     </Link>
                 </div>
-                <img src={'../../gallery-bg.jpg'} style={headerImageStyle} />
+                <img src={'../../gallery-bg.jpg'} className="headerImageStyle" />
+                {/* Photo by <a href="https://unsplash.com/@markusspiske?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Markus Spiske</a> on <a href="https://unsplash.com/s/photos/pens-and-pencils?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a> */}
             </div>
-            <div style={titleStyle}>
-                <h1>Story's Worth Reading</h1>
+            <div className="galleryTitleStyle">
+                <h1 className="galleryH1">Story's Worth Reading</h1>
             </div>
-            <div style={cardGroupStyle}>
+            <div className="cardGroupStyle">
                 {cardsList}
             </div>
         </div >

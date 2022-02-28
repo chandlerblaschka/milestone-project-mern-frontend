@@ -36,7 +36,7 @@ const NewPost = () => {
     return (
         <div className='formBackground'>
             {/* Photo by <a href="https://unsplash.com/@christinhumephoto?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Christin Hume</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a> */}
-            <div className="titleStyle">
+            <div className="formTitleStyle">
                 <h1>Write Your Story</h1>
             </div>
             <Form className="formStyle" onSubmit={(e) => submitPost(e)}>

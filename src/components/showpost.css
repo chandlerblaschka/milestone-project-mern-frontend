@@ -7,25 +7,20 @@
   flex-direction: column;
   background-color: #fdfbfb;
   display: flex;
-  /* align-items: center; */
   box-shadow: 0px 0px 10px 5px lightgray;
 }
+
 .showPostContainer {
   padding: 100px 0 100px 0;
 }
-/* .showPost ::before {
-  content: "";
-  position: absolute;
-  inset: -5px;
-  z-index: -1;
-  border-radius: 25px;
-} */
+
 .commentHeader {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
 }
+
 .postTitle {
   padding: 10px;
   margin-bottom: 20px;
@@ -35,19 +30,21 @@
   border-bottom: solid 2px #313D53;
   width: 50%;
 }
+
 .postAuthor {
   color: #eca72c;
   font-size: 20px;
   margin: 0;
 }
+
 .postDate {
   font-family: "Lora", serif;
   font-style: italic;
   font-size: 18px;
   font-weight: 500;
   color: #999999;
-  /* margin-top: 15px; */
 }
+
 .commentDate {
   font-family: "Lora", serif;
   font-style: italic;
@@ -56,22 +53,32 @@
   color: #999999;
   margin: 3px 0 0 10px;
   flex-grow: 1;
-  /* margin-top: 15px; */
 }
+
 .commentContent {
   margin-bottom: 20px;
 }
+
 .commentBtn {
   width: 100px;
   background-color: #eca72c !important;
   border-color: #eca72c !important;
   color: #313D53 !important;
 }
+
+.commentBtn:hover {
+  background-color: #313D53 !important;
+  color: #eca72c !important;
+  border-color: #313D53 !important;
+  transition: .5s;
+}
+
 .commentSubmit {
   display: flex;
   justify-content: center;
   margin-bottom: 50px;
 }
+
 .postDesc {
   font-family: sans-serif;
   font-size: 14px;
@@ -84,6 +91,7 @@
   border-bottom: #313d53 1px solid;
   padding-bottom: 50px;
 }
+
 .button {
   width: 50px;
   background: #FDFBFB !important;
@@ -97,19 +105,65 @@
   font-size: 15px !important;
   font-family: inherit !important;
 }
+
 .contentBtn {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
 }
+
+.button:hover {
+  color: #eca72c !important;
+  transition: .5s;
+}
+
 .titleBtn {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
+
 .authorFormat {
   display: flex;
   align-content: center !important;
 }
+
+.showH5 {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  font-size: 17px;
+}
+
+.showNameDateStyle {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.showFormSpacingLeft {
+  display: flex;
+  width: 48%;
+  min-width: 180px;
+  font-size: 12px !important;
+}
+
+.showFormSpacingRight {
+  display: flex;
+  width: 48%;
+  min-width: 180px;
+  font-size: 12px !important;
+}
+
+.showFormFont {
+  font-size: 12px !important;
+}
+
+.showTextAreaStyle {
+  height: 75px !important;
+  font-size: 12px;
+}
+
+

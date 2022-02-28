@@ -9,13 +9,37 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* NAV STYLING */
+.navLink {
+  color: #eca72c !important;
+}
+
+.navStyle {
+  background-color: #2d384d !important;
+}
+
+.navBrand {
+  color: #eca72c !important;
+  border: #eca72c 2px solid;
+  padding: 5px 10px 5px 10px;
+}
+
 .nav-link:hover {
   color: #F1F8F9 !important;
   transition: .5s;
 }
 
 /* HEADER STYLING */
-.headerLink {
+.headerStyle {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: end;
+  align-items: center;
+  background-color: #313D53;
+  margin-top: 60px;
+}
+
+.headerLinkH3 {
   color: #FE769B;
   display: flex;
   justify-content: center;
@@ -25,7 +49,7 @@ h1, h2, h3, h4, h5, h6 {
   padding-bottom: 10px;
 }
 
-.headerLink:hover {
+.headerLinkH3:hover {
   color: #ffb6c9;
   border-bottom: 2px solid #ffb6c9;
   width: fit-content;
@@ -34,7 +58,68 @@ h1, h2, h3, h4, h5, h6 {
   transition: .5s;
 }
 
+.headerText {
+  background-color: #313D53;
+  color: white;
+  width: 60%;
+  text-align: center;
+  align-content: center;
+  justify-content: center;
+}
+
+.headerH1 {
+  display: flex;
+  justify-content: center;
+  color: #F1F8F9;
+}
+
+.headerLink {
+  text-decoration: none;
+  justify-content: center;
+}
+
+.headerImageStyle {
+  max-width: 50%;
+  height: 100%;
+}
+
+/* GALLERY STYLING */
+.galleryTitleStyle {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 20px;
+}
+
+.galleryH1 {
+  margin: 0;
+}
+
+.cardGroupStyle {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
 /* CARD STYLING */
+.cardDivStyle {
+  padding: 20px;
+}
+
+.cardLink {
+  text-decoration: none;
+  color: #313D53;
+}
+
+.cardStyle {
+  width: 300px;
+  border: none;
+  box-shadow: 0px 0px 10px .5px lightgray;
+  color: #313D53;
+  min-height: 215.19px;
+}
+
 .cardStyleHover:hover {
   box-shadow: 0px 0px 10px 1px grey;
 }
@@ -55,6 +140,14 @@ h1, h2, h3, h4, h5, h6 {
   text-overflow: ellipsis;
 }
 
+.cardFooter {
+  background-color: #eca72c !important;
+}
+
+.cardFooterText {
+  color: #313D53 !important;
+}
+
 /* NEW-EDIT POST FORM STYLING */
 .formBackground {
   background-image: url('../public/blog-image.jpg');
@@ -63,7 +156,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 60px;
 }
 
-.titleStyle {
+.formTitleStyle {
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -117,6 +210,12 @@ h1, h2, h3, h4, h5, h6 {
   color: #313D53 !important;
 }
 
+.buttonStyle:hover {
+  background-color: #313D53 !important;
+  color: #eca72c !important;
+  border-color: #313D53 !important;
+  transition: .5s;
+}
 
 
 
