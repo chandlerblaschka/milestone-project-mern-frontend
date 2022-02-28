@@ -14,49 +14,6 @@ const EditPost = () => {
     let [date, setDate] = useState("")
     let [content, setContent] = useState("")
 
-    const formStyle = {
-        margin: "auto",
-        width: "50%",
-        minWidth: "200px",
-        padding: "10px 10px 50px 10px",
-        justifyContent: "center"
-    }
-
-    const textAreaStyle = {
-        height: "350px",
-    }
-
-    const nameDateStyle = {
-        display: "flex",
-        flexDirection: "row",
-        flexWrap: "wrap",
-        justifyContent: "space-between"
-    }
-
-    const formSpacingRight = {
-        display: "flex",
-        width: "48%",
-        minWidth: "180px"
-    }
-
-    const formSpacingLeft = {
-        display: "flex",
-        width: "48%",
-        minWidth: "180px"
-    }
-
-    const buttonStyle = {
-        paddingTop: "50px",
-        textAlign: "center"
-    }
-
-    const titleStyle = {
-        display: "flex",
-        flexDirection: "column",
-        textAlign: "center",
-        padding: "30px 30px 5px 30px"
-    }
-
     const dateFormatted = dateFormat(date, "yyyy-mm-dd")
 
     useEffect(() => {
@@ -94,26 +51,24 @@ const EditPost = () => {
 
     return (
         <div className="formBackground">
-            <div style={titleStyle}>
+            <div className="titleStyle">
                 <h1>Edit Post</h1>
             </div>
-            <Form style={formStyle} onSubmit={(e) => submitUpdate(e)}>
-                <Form.Group style={{ display: "flex", flexDirection: "column" }}>
-                    <div style={nameDateStyle}>
+            <Form className="formStyle" onSubmit={(e) => submitUpdate(e)}>
+                <Form.Group className="formGroupStyle">
+                    <div className="nameDateStyle">
                         <FloatingLabel
                             controlId="floatingInput"
                             label="Your Name"
-                            className="mb-3"
-                            style={formSpacingLeft}
+                            className="mb-3 formSpacingLeft"
                         >
                             <Form.Control type="text" placeholder="John Doe" onChange={(e) => setAuthor(e.target.value)} defaultValue={author} />
                         </FloatingLabel>
                         <FloatingLabel
                             controlId="floatingInput"
                             label="Today's Date"
-                            className="mb-3"
+                            className="mb-3 formSpacingRight"
                             size="md"
-                            style={formSpacingRight}
                         >
                             <Form.Control type="date" onChange={(e) => setDate(e.target.value)} defaultValue={dateFormatted} disabled />
                         </FloatingLabel>
@@ -130,11 +85,11 @@ const EditPost = () => {
                         label="Blog Content"
                         className="mb-3"
                     >
-                        <Form.Control as="textarea" placeholder="Create a blog here!" style={textAreaStyle} onChange={(e) => setContent(e.target.value)} defaultValue={content} />
+                        <Form.Control as="textarea" placeholder="Create a blog here!" className="textAreaStyle" onChange={(e) => setContent(e.target.value)} defaultValue={content} />
                     </FloatingLabel>
                 </Form.Group>
-                <div style={buttonStyle}>
-                    <Button variant="light" type="submit" >
+                <div className="buttonDivStyle">
+                    <Button className="buttonStyle" type="submit" >
                         Submit
                     </Button>
                 </div>

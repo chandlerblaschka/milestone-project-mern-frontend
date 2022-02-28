@@ -6,49 +6,6 @@ import dateFormat from "dateformat"
 
 const NewPost = () => {
 
-    const formStyle = {
-        margin: "auto",
-        width: "50%",
-        minWidth: "200px",
-        padding: "10px 10px 50px 10px",
-        justifyContent: "center"
-    }
-
-    const textAreaStyle = {
-        height: "350px",
-    }
-
-    const nameDateStyle = {
-        display: "flex",
-        flexDirection: "row",
-        flexWrap: "wrap",
-        justifyContent: "space-between"
-    }
-
-    const formSpacingRight = {
-        display: "flex",
-        width: "48%",
-        minWidth: "180px"
-    }
-
-    const formSpacingLeft = {
-        display: "flex",
-        width: "48%",
-        minWidth: "180px"
-    }
-
-    const buttonStyle = {
-        paddingTop: "50px",
-        textAlign: "center",
-    }
-
-    const titleStyle = {
-        display: "flex",
-        flexDirection: "column",
-        textAlign: "center",
-        padding: "30px 30px 5px 30px"
-    }
-
     let [author, setAuthor] = useState("")
     let [title, setTitle] = useState("")
     let [date, setDate] = useState(Date.now())
@@ -78,26 +35,25 @@ const NewPost = () => {
 
     return (
         <div className='formBackground'>
-            <div style={titleStyle}>
+            {/* Photo by <a href="https://unsplash.com/@christinhumephoto?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Christin Hume</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a> */}
+            <div className="titleStyle">
                 <h1>Write Your Story</h1>
             </div>
-            <Form style={formStyle} onSubmit={(e) => submitPost(e)}>
-                <Form.Group style={{ display: "flex", flexDirection: "column" }}>
-                    <div style={nameDateStyle}>
+            <Form className="formStyle" onSubmit={(e) => submitPost(e)}>
+                <Form.Group className="formGroupStyle">
+                    <div className="nameDateStyle">
                         <FloatingLabel
                             controlId="floatingInput"
                             label="Your Name"
-                            className="mb-3"
-                            style={formSpacingLeft}
+                            className="mb-3 formSpacingLeft"
                         >
                             <Form.Control type="text" placeholder="John Doe" onChange={(e) => setAuthor(e.target.value)} />
                         </FloatingLabel>
                         <FloatingLabel
                             controlId="floatingInput"
                             label="Today's Date"
-                            className="mb-3"
+                            className="mb-3 formSpacingRight"
                             size="md"
-                            style={formSpacingRight}
                         >
                             <Form.Control type="date" defaultValue={dateFormatted} disabled />
                         </FloatingLabel>
@@ -114,11 +70,11 @@ const NewPost = () => {
                         label="Blog Content"
                         className="mb-3"
                     >
-                        <Form.Control as="textarea" placeholder="Create a blog here!" style={textAreaStyle} onChange={(e) => setContent(e.target.value)} />
+                        <Form.Control as="textarea" placeholder="Create a blog here!" className="textAreaStyle" onChange={(e) => setContent(e.target.value)} />
                     </FloatingLabel>
                 </Form.Group>
-                <div style={buttonStyle}>
-                    <Button type="submit" style={{ backgroundColor: "#ECA72C", borderColor: "#ECA72C", color: "#313D53" }} >
+                <div className="buttonDivStyle">
+                    <Button type="submit" className="buttonStyle" >
                         Submit
                     </Button>
                 </div>
