@@ -5,7 +5,7 @@ We got inspired to build this blog as a cool way to practice full-stack developm
 ### Creating a post
 From the home page, you can click on the "Create Post" link to create a new post. On this page is a form which can be filled out and submitted as a new post which will display on the home page. 
 ### Viewing a post
-On the home page, you can click on a post under the title "Story's Worth Reading" to view the full post. 
+On the home page, you can click on a post under the title "Stories Worth Reading" to view the full post. 
 ### Editing a post
 When viewing a post, you can click the pencil icon to the right of the author name. This button will take you to a form with all the information from the post filled out. Simply edit the information you want to change and click the "Submit" button to submit the edited post.
 ### Deleting a post
