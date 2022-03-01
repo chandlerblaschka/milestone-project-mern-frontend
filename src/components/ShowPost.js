@@ -112,60 +112,64 @@ export default function ShowPost(props) {
         </div>
         <h1 className='postDate'>{dateFormatted}</h1>
         <p className='postDesc'>{data.post_content}</p>
-
-        <Form.Group className='mb-3' controlId='exampleForm.ControlTextarea1'>
-          <h4>Write a comment</h4>
-          <div className="showNameDateStyle">
-            <FloatingLabel
-              controlId='floatingInput'
-              label='Your Name'
-              className='mb-3 showFormSpacingLeft'
-            >
-              <Form.Control
-                type='text'
+        <Form>
+          <Form.Group className='mb-3' controlId='exampleForm.ControlTextarea1'>
+            <h4>Write a comment</h4>
+            <div className="showNameDateStyle">
+              <FloatingLabel
+                controlId='floatingInput'
+                label='Your Name'
+                className='mb-3 showFormSpacingLeft'
+              >
+                <Form.Control
+                  required
+                  type='text'
+                  size='sm'
+                  placeholder='John Doe'
+                  onChange={(e) => setAuthor(e.target.value)}
+                />
+              </FloatingLabel>
+              <FloatingLabel
+                controlId='floatingInput'
+                label="Today's Date"
+                className='mb-3 showFormSpacingRight'
                 size='sm'
-                placeholder='John Doe'
-                onChange={(e) => setAuthor(e.target.value)}
-              />
-            </FloatingLabel>
+              >
+                <Form.Control
+                  required
+                  type='date'
+                  defaultValue={dateFormattedToday}
+                  disabled
+                  className="showFormFont"
+                />
+              </FloatingLabel>
+            </div>
             <FloatingLabel
               controlId='floatingInput'
-              label="Today's Date"
-              className='mb-3 showFormSpacingRight'
-              size='sm'
+              label='Comment'
+              className='mb-3 showFormFont'
             >
               <Form.Control
-                type='date'
-                defaultValue={dateFormattedToday}
-                disabled
-                className="showFormFont"
+                required
+                as='textarea'
+                placeholder='Create a blog here!'
+                className="showTextAreaStyle"
+                onChange={(e) => setContent(e.target.value)}
               />
             </FloatingLabel>
+          </Form.Group>
+          <div className='commentSubmit'>
+            <Button
+              className='commentBtn'
+              variant='primary'
+              size='sm'
+              type='submit'
+              onSubmit={(e) => submitComment(e)}
+            >
+              Submit
+            </Button>
           </div>
-          <FloatingLabel
-            controlId='floatingInput'
-            label='Comment'
-            className='mb-3 showFormFont'
-          >
-            <Form.Control
-              as='textarea'
-              placeholder='Create a blog here!'
-              className="showTextAreaStyle"
-              onChange={(e) => setContent(e.target.value)}
-            />
-          </FloatingLabel>
-        </Form.Group>
-        <div className='commentSubmit'>
-          <Button
-            className='commentBtn'
-            variant='primary'
-            size='sm'
-            type='submit'
-            onClick={(e) => submitComment(e)}
-          >
-            Submit
-          </Button>
-        </div>
+        </Form>
         {commentsDisplay}
       </div>
     </div>

@@ -28,7 +28,7 @@ const EditPost = () => {
             setContent(resData.post_content)
         }
         fetchData()
-    }, [])
+    }, [postId])
 
     const submitUpdate = async (e) => {
         e.preventDefault()
@@ -62,7 +62,7 @@ const EditPost = () => {
                             label="Your Name"
                             className="mb-3 formSpacingLeft"
                         >
-                            <Form.Control type="text" placeholder="John Doe" onChange={(e) => setAuthor(e.target.value)} defaultValue={author} />
+                            <Form.Control required type="text" placeholder="John Doe" onChange={(e) => setAuthor(e.target.value)} defaultValue={author} />
                         </FloatingLabel>
                         <FloatingLabel
                             controlId="floatingInput"
@@ -70,7 +70,7 @@ const EditPost = () => {
                             className="mb-3 formSpacingRight"
                             size="md"
                         >
-                            <Form.Control type="date" onChange={(e) => setDate(e.target.value)} defaultValue={dateFormatted} disabled />
+                            <Form.Control required type="date" onChange={(e) => setDate(e.target.value)} defaultValue={dateFormatted} disabled />
                         </FloatingLabel>
                     </div>
                     <FloatingLabel
@@ -78,14 +78,14 @@ const EditPost = () => {
                         label="Blog Title"
                         className="mb-3"
                     >
-                        <Form.Control type="text" placeholder="My Blog Post" onChange={(e) => setTitle(e.target.value)} defaultValue={title} />
+                        <Form.Control required type="text" placeholder="My Blog Post" onChange={(e) => setTitle(e.target.value)} defaultValue={title} />
                     </FloatingLabel>
                     <FloatingLabel
                         controlId="floatingInput"
                         label="Blog Content"
                         className="mb-3"
                     >
-                        <Form.Control as="textarea" placeholder="Create a blog here!" className="textAreaStyle" onChange={(e) => setContent(e.target.value)} defaultValue={content} />
+                        <Form.Control required as="textarea" placeholder="Create a blog here!" className="textAreaStyle" onChange={(e) => setContent(e.target.value)} defaultValue={content} />
                     </FloatingLabel>
                 </Form.Group>
                 <div className="buttonDivStyle">

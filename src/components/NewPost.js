@@ -47,7 +47,7 @@ const NewPost = () => {
                             label="Your Name"
                             className="mb-3 formSpacingLeft"
                         >
-                            <Form.Control type="text" placeholder="John Doe" onChange={(e) => setAuthor(e.target.value)} />
+                            <Form.Control required type="text" placeholder="John Doe" onChange={(e) => setAuthor(e.target.value)} />
                         </FloatingLabel>
                         <FloatingLabel
                             controlId="floatingInput"
@@ -55,7 +55,7 @@ const NewPost = () => {
                             className="mb-3 formSpacingRight"
                             size="md"
                         >
-                            <Form.Control type="date" defaultValue={dateFormatted} disabled />
+                            <Form.Control required type="date" defaultValue={dateFormatted} disabled />
                         </FloatingLabel>
                     </div>
                     <FloatingLabel
@@ -63,14 +63,14 @@ const NewPost = () => {
                         label="Blog Title"
                         className="mb-3"
                     >
-                        <Form.Control type="text" placeholder="My Blog Post" onChange={(e) => setTitle(e.target.value)} />
+                        <Form.Control required type="text" placeholder="My Blog Post" onChange={(e) => setTitle(e.target.value)} />
                     </FloatingLabel>
                     <FloatingLabel
                         controlId="floatingInput"
                         label="Blog Content"
                         className="mb-3"
                     >
-                        <Form.Control as="textarea" placeholder="Create a blog here!" className="textAreaStyle" onChange={(e) => setContent(e.target.value)} />
+                        <Form.Control required as="textarea" placeholder="Create a blog here!" className="textAreaStyle" onChange={(e) => setContent(e.target.value)} />
                     </FloatingLabel>
                 </Form.Group>
                 <div className="buttonDivStyle">
