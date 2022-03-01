@@ -19,8 +19,9 @@ When viewing a post, scroll down to the comments section. Click the trash can ic
 This app was built using React, Node.js, Express, Mongoose, MongoDB, CSS, React-Bootstrap, and React-Icons.
 
 ## Bugs and unfinished functionality
--When submitting content, line breaks are not preserved
--Make forms more responsive
--Title text is hard to see when browser is resized
--Add the ability to make user accounts
--Make posts shareable on social media platforms
+- When submitting content, line breaks are not preserved
+- Make forms more responsive
+- Title text is hard to see when browser is resized
+- Add the ability to make user accounts
+- Make posts shareable on social media platforms
+- Add pagination to gallery
