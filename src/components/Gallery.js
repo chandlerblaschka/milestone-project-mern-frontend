@@ -27,7 +27,7 @@ const Gallery = (props) => {
                 {/* Photo by <a href="https://unsplash.com/@markusspiske?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Markus Spiske</a> on <a href="https://unsplash.com/s/photos/pens-and-pencils?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a> */}
             </div>
             <div className="galleryTitleStyle">
-                <h1 className="galleryH1">Story's Worth Reading</h1>
+                <h1 className="galleryH1">Stories Worth Reading</h1>
             </div>
             <div className="cardGroupStyle">
                 {cardsList}
