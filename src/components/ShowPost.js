@@ -164,7 +164,7 @@ export default function ShowPost(props) {
               variant='primary'
               size='sm'
               type='submit'
-              onSubmit={(e) => submitComment(e)}
+              onClick={(e) => submitComment(e)}
             >
               Submit
             </Button>
