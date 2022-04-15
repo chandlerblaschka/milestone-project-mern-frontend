@@ -20,7 +20,7 @@ export default function ShowPost(props) {
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetch(
-        `https://milestone-project-mern-backend.herokuapp.com/posts/${postId}`
+        `https://blogit-csb.herokuapp.com/posts/${postId}`
       )
       const resData = await response.json()
       setData(resData)
@@ -39,7 +39,7 @@ export default function ShowPost(props) {
       post: postId,
     }
     await fetch(
-      `https://milestone-project-mern-backend.herokuapp.com/comments`,
+      `https://blogit-csb.herokuapp.com/comments`,
       {
         method: "POST",
         mode: "cors",

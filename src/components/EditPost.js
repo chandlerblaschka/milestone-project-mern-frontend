@@ -18,7 +18,7 @@ const EditPost = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-            const response = await fetch(`https://milestone-project-mern-backend.herokuapp.com/posts/${postId}`)
+            const response = await fetch(`https://https://blogit-csb.herokuapp.com/posts/${postId}`)
             const resData = await response.json()
 
             // Set post values
@@ -39,7 +39,7 @@ const EditPost = () => {
             post_content: content
         }
 
-        await fetch(`https://milestone-project-mern-backend.herokuapp.com/posts/${postId}`, {
+        await fetch(`https://https://blogit-csb.herokuapp.com/posts/${postId}`, {
             method: "PUT",
             headers: {
                 'Content-Type': 'application/json'

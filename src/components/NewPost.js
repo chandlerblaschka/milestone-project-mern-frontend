@@ -22,7 +22,7 @@ const NewPost = () => {
             post_content: content
         }
 
-        await fetch("https://milestone-project-mern-backend.herokuapp.com/posts", {
+        await fetch("https://blogit-csb.herokuapp.com/posts", {
             method: "POST",
             mode: 'cors',
             headers: {
