@@ -4,7 +4,7 @@ import { Button, FloatingLabel, Form } from "react-bootstrap"
 import { BsFillPersonFill, BsTrash } from "react-icons/bs"
 import { FiEdit } from "react-icons/fi"
 import { Link, useParams } from "react-router-dom"
-import "./showpost.css"
+import "../css/showPost.css"
 
 export default function ShowPost(props) {
   const { postId } = useParams()

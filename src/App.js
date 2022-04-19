@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import './App.css';
+import './css/style.css';
 import BlogNavBar from './components/BlogNavBar';
 import EditPost from './components/EditPost';
 import Footer from './components/Footer';

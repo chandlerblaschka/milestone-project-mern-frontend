@@ -1,0 +1,235 @@
+// color variables
+$off-white: #F1F8F9;
+$text-dark-blue: #313D53;
+$orange: #eca72c;
+$background-dark-blue: #2d384d;
+$text-pink: #FE769B;
+$text-light-pink: #ffb6c9;
+$white: white;
+$light-grey: lightgray;
+$grey: grey;
+
+
+.App {
+    align-items: center;
+    margin: auto;
+    background-color: $off-white;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: $text-dark-blue;
+}
+
+.navStyle {
+    background-color: $background-dark-blue;
+}
+
+.navBrand {
+    color: $orange !important;
+    border: $orange 2px solid;
+    padding: 5px 10px 5px 10px;
+}
+
+.navLink {
+    color: $orange !important;
+
+    &:hover {
+        color: $off-white;
+        transition: .5s;
+    }
+}
+
+// header styling
+.headerStyle {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: end;
+    align-items: center;
+    background-color: $text-dark-blue;
+    margin-top: 60px;
+
+}
+
+.headerLinkH3 {
+    color: $text-pink;
+    display: flex;
+    justify-content: center;
+    border-bottom: $text-dark-blue 2px solid;
+    width: fit-content;
+    margin: 0px auto 0px auto !important;
+    padding-bottom: 10px;
+
+    &:hover {
+        color: $text-light-pink;
+        border-bottom: $text-light-pink 2px solid;
+        transition: .5s;
+    }
+}
+
+.headerText {
+    background-color: $text-dark-blue;
+    color: $white;
+    // add function for width??
+    width: 60%;
+    text-align: center;
+    align-content: center;
+    justify-content: center;
+}
+
+.headerH1 {
+    display: flex;
+    justify-content: center;
+    color: $off-white;
+}
+
+.headerLink {
+    text-decoration: none;
+    justify-content: center;
+}
+
+.headerImageStyle {
+    max-width: 50%;
+    height: 100%;
+}
+
+// Gallery Style
+.galleryTitleStyle {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+}
+
+.galleryH1 {
+    margin: 0;
+}
+
+.cardGroupStyle {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+// Card Style
+.cardDivStyle {
+    padding: 20px;
+}
+
+.cardLink {
+    text-decoration: none;
+    color: $text-dark-blue;
+}
+
+.cardStyle {
+    width: 300px;
+    border: none;
+    box-shadow: 0px 0px 10px .5px $light-grey;
+    color: $text-dark-blue;
+    min-height: 215.19px;
+
+    &:hover {
+        box-shadow: $grey;
+    }
+}
+
+.cardContent {
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.cardTitle {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 25px;
+}
+
+.cardFooter {
+    background-color: $orange !important;
+}
+
+.cardFooterText {
+    color: $text-dark-blue !important;
+}
+
+// New - Edit Post Style
+
+.formBackground {
+    background-image: url('../../public/blog-image.jpg');
+    background-position: center;
+    background-size: 100%;
+    margin-top: 60px;
+}
+
+.formTitleStyle {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 30px 30px 5px 30px;
+}
+
+.formStyle {
+    margin: auto;
+    width: 50%;
+    min-width: 200px;
+    padding: 10px 10px 50px 10px;
+    justify-content: center;
+}
+
+.formGroupStyle {
+    display: flex;
+    flex-direction: column;
+}
+
+.nameDateStyle {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.formSpacingLeft {
+    display: flex;
+    width: 48% !important;
+    min-width: 180px !important;
+}
+
+.formSpacingRight {
+    display: flex;
+    width: 48% !important;
+    min-width: 180px !important;
+}
+
+.textAreaStyle {
+    height: 350px !important;
+}
+
+.buttonDivStyle {
+    padding-top: 50px;
+    text-align: center;
+}
+
+.buttonStyle {
+    background-color: $orange !important;
+    border-color: $orange !important;
+    color: $text-dark-blue;
+
+    &:hover {
+        background-color: $text-dark-blue !important;
+        color: $orange !important;
+        border-color: $text-dark-blue !important;
+        transition: .5s;
+    }
+}

@@ -4,17 +4,17 @@
   background-color: #F1F8F9;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: #313D53;
 }
 
-/* NAV STYLING */
-.navLink {
-  color: #eca72c !important;
-}
-
 .navStyle {
-  background-color: #2d384d !important;
+  background-color: #2d384d;
 }
 
 .navBrand {
@@ -23,13 +23,14 @@ h1, h2, h3, h4, h5, h6 {
   padding: 5px 10px 5px 10px;
 }
 
-/* refactor for correct navlink type */
-.nav-link:hover {
-  color: #F1F8F9 !important;
-  transition: .5s;
+.navLink {
+  color: #eca72c !important;
+}
+.navLink:hover {
+  color: #F1F8F9;
+  transition: 0.5s;
 }
 
-/* HEADER STYLING */
 .headerStyle {
   display: flex;
   flex-direction: row;
@@ -44,19 +45,15 @@ h1, h2, h3, h4, h5, h6 {
   color: #FE769B;
   display: flex;
   justify-content: center;
-  border-bottom: 2px solid #313D53;
+  border-bottom: #313D53 2px solid;
   width: fit-content;
   margin: 0px auto 0px auto !important;
   padding-bottom: 10px;
 }
-
 .headerLinkH3:hover {
   color: #ffb6c9;
-  border-bottom: 2px solid #ffb6c9;
-  width: fit-content;
-  margin: 0px auto 0px auto !important;
-  padding-bottom: 10px;
-  transition: .5s;
+  border-bottom: #ffb6c9 2px solid;
+  transition: 0.5s;
 }
 
 .headerText {
@@ -84,7 +81,6 @@ h1, h2, h3, h4, h5, h6 {
   height: 100%;
 }
 
-/* GALLERY STYLING */
 .galleryTitleStyle {
   display: flex;
   flex-direction: column;
@@ -103,7 +99,6 @@ h1, h2, h3, h4, h5, h6 {
   flex-wrap: wrap;
 }
 
-/* CARD STYLING */
 .cardDivStyle {
   padding: 20px;
 }
@@ -116,13 +111,12 @@ h1, h2, h3, h4, h5, h6 {
 .cardStyle {
   width: 300px;
   border: none;
-  box-shadow: 0px 0px 10px .5px lightgray;
+  box-shadow: 0px 0px 10px 0.5px lightgray;
   color: #313D53;
   min-height: 215.19px;
 }
-
-.cardStyleHover:hover {
-  box-shadow: 0px 0px 10px 1px grey;
+.cardStyle:hover {
+  box-shadow: grey;
 }
 
 .cardContent {
@@ -150,9 +144,8 @@ h1, h2, h3, h4, h5, h6 {
   color: #313D53 !important;
 }
 
-/* NEW-EDIT POST FORM STYLING */
 .formBackground {
-  background-image: url('../public/blog-image.jpg');
+  background-image: url("../../public/blog-image.jpg");
   background-position: center;
   background-size: 100%;
   margin-top: 60px;
@@ -209,19 +202,13 @@ h1, h2, h3, h4, h5, h6 {
 .buttonStyle {
   background-color: #eca72c !important;
   border-color: #eca72c !important;
-  color: #313D53 !important;
+  color: #313D53;
 }
-
 .buttonStyle:hover {
   background-color: #313D53 !important;
   color: #eca72c !important;
   border-color: #313D53 !important;
-  transition: .5s;
+  transition: 0.5s;
 }
 
-
-
-
-
-
-
+/*# sourceMappingURL=style.css.map */

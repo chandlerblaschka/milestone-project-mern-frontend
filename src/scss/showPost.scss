@@ -1,0 +1,188 @@
+// color variables
+$off-white: #F1F8F9;
+$text-dark-blue: #313D53;
+$orange: #eca72c;
+$background-dark-blue: #2d384d;
+$text-pink: #FE769B;
+$text-light-pink: #ffb6c9;
+$white: white;
+$light-grey: lightgray;
+$grey: grey;
+$show-background-color: #fdfbfb;
+$font-stack: sans-serif;
+$date-text: #999999;
+$date-font-stack: "Lora",
+serif;
+$black: black;
+
+
+@mixin flexCenter($direction: '', $justify: '') {
+    display: flex;
+    align-items: center;
+    justify-content: $justify;
+    flex-direction: $direction;
+}
+
+@mixin dateText($size) {
+    font-family: $date-font-stack;
+    font-style: italic;
+    font-weight: 500;
+    color: $date-text;
+    font-size: $size;
+}
+
+@mixin form-button {
+    background-color: $orange !important;
+    border-color: $orange !important;
+    color: $text-dark-blue !important;
+}
+
+@mixin form-button-hover {
+    background-color: $text-dark-blue !important;
+    color: $orange !important;
+    border-color: $text-dark-blue !important;
+}
+
+.showPost {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 60%;
+    padding: 20px 30px 50px 30px;
+    margin: auto;
+    background-color: $show-background-color;
+    box-shadow: 0px 0px 10px 5px $light-grey;
+}
+
+.showPostContainer {
+    padding: 100px 0 100px 0;
+}
+
+.commentHeader {
+    @include flexCenter(row, flex-start)
+}
+
+.postTitle {
+    padding: 10px;
+    margin-bottom: 20px;
+    font-family: $font-stack;
+    font-size: 30px;
+    font-weight: 900;
+    border-bottom: 2px solid $text-dark-blue;
+    width: 50%;
+}
+
+.postDate {
+    @include dateText(18px)
+}
+
+.postAuthor {
+    color: $orange;
+    font-size: 20px;
+    margin: 0;
+    font-family: $font-stack;
+}
+
+.commentDate {
+    @include dateText(15px)
+}
+
+.commentContent {
+    margin-bottom: 20px;
+}
+
+.commentBtn {
+    @include form-button();
+    width: 100px;
+
+    &:hover {
+        @include form-button-hover();
+        width: 100px;
+    }
+
+}
+
+.commentSubmit {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.postDesc {
+    @include flexCenter('', center);
+    color: $black;
+    font-family: $font-stack;
+    font-size: 14px;
+    line-height: 24px;
+    margin-bottom: 50px;
+    border-bottom: 1px solid $text-dark-blue;
+    padding-bottom: 50px;
+}
+
+.button {
+    width: 50px;
+    background: $show-background-color !important;
+    color: $text-dark-blue !important;
+    border: none !important;
+    padding: 10px 20px !important;
+    margin: 2px !important;
+    border-radius: 5px !important;
+    cursor: pointer;
+    text-decoration: none !important;
+    font-size: 15px !important;
+    font-family: inherit !important;
+
+    &:hover {
+        color: $orange !important;
+        transition: .5s;
+    }
+}
+
+.contentBtn {
+    @include flexCenter(row, center);
+    flex-wrap: wrap;
+}
+
+.titleBtn {
+    @include flexCenter(row, space-between)
+}
+
+.authorFormat {
+    display: flex;
+    align-content: center !important;
+}
+
+.showH5 {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    font-size: 17px;
+}
+
+.showNameDateStyle {
+    @include flexCenter(row, space-between)
+}
+
+
+.showFormSpacingLeft {
+    display: flex;
+    width: 48%;
+    min-width: 180px;
+    font-size: 12px !important;
+}
+
+.showFormSpacingRight {
+    display: flex;
+    width: 48%;
+    min-width: 180px;
+    font-size: 12px !important;
+}
+
+.showFormFont {
+    font-size: 12px !important;
+}
+
+.showTextAreaStyle {
+    height: 75px !important;
+    font-size: 12px;
+}

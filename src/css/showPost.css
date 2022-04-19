@@ -1,0 +1,168 @@
+.showPost {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 60%;
+  padding: 20px 30px 50px 30px;
+  margin: auto;
+  background-color: #fdfbfb;
+  box-shadow: 0px 0px 10px 5px lightgray;
+}
+
+.showPostContainer {
+  padding: 100px 0 100px 0;
+}
+
+.commentHeader {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+}
+
+.postTitle {
+  padding: 10px;
+  margin-bottom: 20px;
+  font-family: sans-serif;
+  font-size: 30px;
+  font-weight: 900;
+  border-bottom: 2px solid #313D53;
+  width: 50%;
+}
+
+.postDate {
+  font-family: "Lora", serif;
+  font-style: italic;
+  font-weight: 500;
+  color: #999999;
+  font-size: 18px;
+}
+
+.postAuthor {
+  color: #eca72c;
+  font-size: 20px;
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.commentDate {
+  font-family: "Lora", serif;
+  font-style: italic;
+  font-weight: 500;
+  color: #999999;
+  font-size: 15px;
+}
+
+.commentContent {
+  margin-bottom: 20px;
+}
+
+.commentBtn {
+  background-color: #eca72c !important;
+  border-color: #eca72c !important;
+  color: #313D53 !important;
+  width: 100px;
+}
+.commentBtn:hover {
+  background-color: #313D53 !important;
+  color: #eca72c !important;
+  border-color: #313D53 !important;
+  width: 100px;
+}
+
+.commentSubmit {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.postDesc {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: "";
+  color: black;
+  font-family: sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  margin-bottom: 50px;
+  border-bottom: 1px solid #313D53;
+  padding-bottom: 50px;
+}
+
+.button {
+  width: 50px;
+  background: #fdfbfb !important;
+  color: #313D53 !important;
+  border: none !important;
+  padding: 10px 20px !important;
+  margin: 2px !important;
+  border-radius: 5px !important;
+  cursor: pointer;
+  text-decoration: none !important;
+  font-size: 15px !important;
+  font-family: inherit !important;
+}
+.button:hover {
+  color: #eca72c !important;
+  transition: 0.5s;
+}
+
+.contentBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.titleBtn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.authorFormat {
+  display: flex;
+  align-content: center !important;
+}
+
+.showH5 {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  font-size: 17px;
+}
+
+.showNameDateStyle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.showFormSpacingLeft {
+  display: flex;
+  width: 48%;
+  min-width: 180px;
+  font-size: 12px !important;
+}
+
+.showFormSpacingRight {
+  display: flex;
+  width: 48%;
+  min-width: 180px;
+  font-size: 12px !important;
+}
+
+.showFormFont {
+  font-size: 12px !important;
+}
+
+.showTextAreaStyle {
+  height: 75px !important;
+  font-size: 12px;
+}
+
+/*# sourceMappingURL=showPost.css.map */
