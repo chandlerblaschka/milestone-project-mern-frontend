@@ -7,10 +7,11 @@ import Footer from './components/Footer';
 import Gallery from './components/Gallery';
 import NewPost from './components/NewPost';
 import ShowPost from './components/ShowPost';
+import React from 'react';
 
 function App() {
 
-  let [data, setData] = useState({})
+  let [data, setData] = useState<any>({})
 
   useEffect(() => {
     const fetchData = async () => {
@@ -21,7 +22,7 @@ function App() {
     fetchData()
   }, [])
 
-  const deletePost = async (postId) => {
+  const deletePost = async (postId: any) => {
     await fetch(`https://blogit-csb.herokuapp.com/posts/${postId}`, {
       method: "DELETE",
       mode: 'cors',
@@ -29,10 +30,10 @@ function App() {
         'Content-Type': 'application/json'
       }
     })
-    window.location = "/"
+    window.location.href = "/"
   }
 
-  const deleteComment = async (commentId) => {
+  const deleteComment = async (commentId: any) => {
     await fetch(`https://blogit-csb.herokuapp.com/comments/${commentId}`, {
       method: "DELETE",
       mode: 'cors',

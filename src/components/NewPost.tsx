@@ -6,14 +6,14 @@ import dateFormat from "dateformat"
 
 const NewPost = () => {
 
-    let [author, setAuthor] = useState("")
-    let [title, setTitle] = useState("")
-    let [date, setDate] = useState(Date.now())
-    let [content, setContent] = useState("")
+    let [author, setAuthor] = useState<string>("")
+    let [title, setTitle] = useState<string>("")
+    let [date, setDate] = useState<any>(Date.now())
+    let [content, setContent] = useState<string>("")
 
     const dateFormatted = dateFormat(date, "yyyy-mm-dd")
 
-    const submitPost = async (e) => {
+    const submitPost = async (e: React.ChangeEvent<EventTarget>): Promise<void> => {
         e.preventDefault()
         const post = {
             post_author: author,
@@ -30,7 +30,7 @@ const NewPost = () => {
             },
             body: JSON.stringify(post)
         })
-        window.location = "/"
+        window.location.href = "/"
     }
 
     return (
@@ -53,7 +53,7 @@ const NewPost = () => {
                             controlId="floatingInput"
                             label="Today's Date"
                             className="mb-3 formSpacingRight"
-                            size="md"
+                        // size="md"
                         >
                             <Form.Control required type="date" defaultValue={dateFormatted} disabled />
                         </FloatingLabel>

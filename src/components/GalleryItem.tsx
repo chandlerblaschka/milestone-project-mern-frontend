@@ -4,7 +4,7 @@ import CardGroup from "react-bootstrap/CardGroup";
 import { Link } from "react-router-dom";
 import dateFormat from "dateformat";
 
-const GalleryItem = (props) => {
+const GalleryItem = (props: any) => {
     const card = props.data
 
     const dateFormatting = dateFormat(`${card.post_date}`, "mmmm dS, yyyy")

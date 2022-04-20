@@ -6,14 +6,14 @@ import { FiEdit } from "react-icons/fi"
 import { Link, useParams } from "react-router-dom"
 import "../css/showPost.css"
 
-export default function ShowPost(props) {
+export default function ShowPost(props: any) {
   const { postId } = useParams()
-  let [author, setAuthor] = useState("")
-  let [data, setData] = useState({})
-  let [postDate, setPostDate] = useState('')
-  let [date, setDate] = useState(Date.now())
-  let [content, setContent] = useState({})
-  let [comments, setComments] = useState([])
+  let [author, setAuthor] = useState<string>("")
+  let [data, setData] = useState<any>({})
+  let [postDate, setPostDate] = useState<string>('')
+  let [date, setDate] = useState<any>(Date.now())
+  let [content, setContent] = useState<any>({})
+  let [comments, setComments] = useState<any>([])
   const dateFormattedToday = dateFormat(date, "yyyy-mm-dd")
   let dateFormatted = dateFormat(`${postDate}`, "mmmm dS, yyyy")
 
@@ -30,7 +30,7 @@ export default function ShowPost(props) {
     fetchData()
   }, [postId])
 
-  const submitComment = async (e) => {
+  const submitComment = async (e: React.ChangeEvent<EventTarget>): Promise<void> => {
     e.preventDefault()
     const comment = {
       comment_author: author,
@@ -49,12 +49,12 @@ export default function ShowPost(props) {
         body: JSON.stringify(comment),
       }
     )
-    window.location = `/postShow/${postId}`
+    window.location.href = `/postShow/${postId}`
   }
 
-  let commentsDisplay = <p>no comments yet</p>
+  let commentsDisplay: any = <p>no comments yet</p>
   if (comments) {
-    commentsDisplay = comments.map((comment, index) => {
+    commentsDisplay = comments.map((comment: any, index: number) => {
 
       let commentDate = dateFormat(comment.comment_date, "mmmm dS, yyyy")
 
@@ -86,9 +86,9 @@ export default function ShowPost(props) {
   return (
     <div className='showPostContainer'>
       <div className='showPost'>
-        <center>
+        <div>
           <h1 className='postTitle'>{data.post_title}</h1>
-        </center>
+        </div>
         <div className='titleBtn'>
           <div className='authorFormat'>
             <h1 className='postAuthor'>{data.post_author}</h1>
@@ -133,7 +133,7 @@ export default function ShowPost(props) {
                 controlId='floatingInput'
                 label="Today's Date"
                 className='mb-3 showFormSpacingRight'
-                size='sm'
+              // size='sm'
               >
                 <Form.Control
                   required

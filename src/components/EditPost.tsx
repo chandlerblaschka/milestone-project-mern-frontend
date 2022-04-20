@@ -3,16 +3,17 @@ import { useParams } from "react-router-dom"
 import { useEffect } from "react"
 import { FloatingLabel, Form, Button } from "react-bootstrap"
 import dateFormat from "dateformat"
+import React from "react"
 
 const EditPost = () => {
 
     const { postId } = useParams()
 
     // Post values
-    let [author, setAuthor] = useState("")
-    let [title, setTitle] = useState("")
-    let [date, setDate] = useState("")
-    let [content, setContent] = useState("")
+    let [author, setAuthor] = useState<string>("")
+    let [title, setTitle] = useState<string>("")
+    let [date, setDate] = useState<any>("")
+    let [content, setContent] = useState<string>("")
 
     const dateFormatted = dateFormat(date, "yyyy-mm-dd")
 
@@ -30,7 +31,7 @@ const EditPost = () => {
         fetchData()
     }, [postId])
 
-    const submitUpdate = async (e) => {
+    const submitUpdate = async (e: React.ChangeEvent<EventTarget>): Promise<void> => {
         e.preventDefault()
         const post = {
             post_author: author,
@@ -46,7 +47,7 @@ const EditPost = () => {
             },
             body: JSON.stringify(post)
         })
-        window.location = "/"
+        window.location.href = "/"
     }
 
     return (
@@ -68,7 +69,7 @@ const EditPost = () => {
                             controlId="floatingInput"
                             label="Today's Date"
                             className="mb-3 formSpacingRight"
-                            size="md"
+                        // size="md"
                         >
                             <Form.Control required type="date" onChange={(e) => setDate(e.target.value)} defaultValue={dateFormatted} disabled />
                         </FloatingLabel>
